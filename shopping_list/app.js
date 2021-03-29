@@ -22,9 +22,6 @@ const app = Vue.createApp({
     //         this.y = e.offsetY
     //         this.alt = e.altKey
     //     },
-        createList() {
-            console.log("HI")
-        }
     }, 
     computed: { 
         // filteredBooks() {

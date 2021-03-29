@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <style>
+        body {
+            margin-top: 50px;
+            text-align: center;
+            padding: 0px 30px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            background-color: lightsteelblue;
+        }
+        h1 {
+            margin-bottom: 100px;
+        }
+        h3 {
+            text-align: left;
+            width: 80%;
+            margin: 0 10% 15px;
+            /* background-color: lime; */
+            color: rgb(0, 0, 0, 0.5);
+        }
+        h5 {
+            font-size: 18px;
+            margin: 10px auto;
+            color: #333;
+        }
+        p {
+            margin: 0;
+        }
+        input  {
+            width: 80%;
+            font-size: 20px;
+            /* background-color: lime; */
+            color: #555;
+        }
+        button {
+            display: block;
+            width: 80%;
+            margin: 50px auto 100px;
+            /* background-color: lime; */
+            height: 50px;
+            font-size: 25px;
+            border: none;
+            border-radius: 5px;
+        }
+        .block, .block2 {
+            margin: 15px;
+            padding: 15px;
+            border-radius: 10px;
+        }
+        .block {
+            
+        }
+        .block2 {
+            background-color: lightgreen;
+        }
+        .col3 {
+            display: flex;
+            flex-direction: row;
+        }
+        .row {
+            flex-grow: 1;
+            margin: 20px 5px;
+        }
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            list-style-type: none;
+            text-align: center;
+            font-size: 12px;
+            margin: 5px 0;
+            padding: 0;
+        }
+        .meals {
+            display: none;
+        }
+        .protien {
+            background-color: lightsalmon;
+        }
+        #meals_btn {
+            background-color: gray;
+            color: white;
+        }
+        #close_btn {
+            background-color: rgba(255, 0, 0, 0.5);
+            color: white;
+        }
+        #temp {
+            display: none;
+        }
+    </style>
+
+</head>
+
+
+<body>
+    
+    <div id="app">
+
+        <h1>{{ title }}</h1>
+        <h3>Upload .xls or .xlsx file:</h3>
+        <input type="file" id="upload" accept=".xlsx">
+        <button onClick="createList()">Create Shopping List</button>
+
+    <div id="temp">
+
+        <div class="block2">
+            <h5>Protiens</h5>
+            <div class="col3">
+                    <div class="row">
+                        <ul>
+                            <li>beef</li>
+                            <li>chicken</li>
+                            <li>salmon</li>
+                            <li>tofu</li>
+                        </ul>
+                    </div>
+                    <div class="row">
+                        <ul>
+                            <li>31.6 lbs</li>
+                            <li>28.2 lbs</li>
+                            <li>4.9 lbs</li>
+                            <li>7.2 lbs</li>
+                        </ul>
+                    </div>
+            </div>         
+        </div>
+
+        <div class="block2">
+            <h5>Starches</h5>
+            <div class="col3">
+                    <div class="row">
+                        <ul>
+                            <li>potatoes</li>
+                            <li>cilantro-lime rice</li>
+                            <li>black rice</li>
+                            <li>pasta</li>
+                            <li>quinoa</li>
+                        </ul>
+                    </div>
+                    <div class="row">
+                        <ul>
+                            <li>74 cups?</li>
+                            <li>70 lbs?</li>
+                            <li>104.5 cups</li>
+                            <li>78.3 lbs</li>
+                        </ul>
+                    </div>
+            </div>         
+        </div>
+
+        <div class="block2">
+            <h5>Veggies</h5>
+            <div class="col3">
+                    <div class="row">
+                        <ul>
+                            <li>mushrooms</li>
+                            <li>carrots</li>
+                            <li>normandy</li>
+                            <li>asparagus</li>
+                            <li>green onions</li>
+                        </ul>
+                    </div>
+                    <div class="row">
+                        <ul>
+                            <li>74 cups?</li>
+                            <li>70 lbs?</li>
+                            <li>104.5 cups</li>
+                            <li>78.3 lbs</li>
+                            <li>78.3 lbs</li>
+                        </ul>
+                    </div>
+            </div>         
+        </div>
+
+        <div class="block2">
+            <h5>Sauces</h5>
+            <div class="col3">
+                    <div class="row">
+                        <ul>
+                            <li>fresh salsa</li>
+                            <li>salsa verde cashews</li>
+                            <li>thai peanut</li>
+                            <li>mole</li>
+                            <li>herbed sauce</li>
+                            <li>marinara</li>
+                            <li>al pastor</li>
+                            <li>chipotle ranch</li>
+                        </ul>
+                    </div>
+                    <div class="row">
+                        <ul>
+                            <li>74 cups?</li>
+                            <li>70 lbs?</li>
+                            <li>104.5 cups</li>
+                            <li>78.3 lbs</li>
+                            <li>74 cups?</li>
+                            <li>70 lbs?</li>
+                            <li>104.5 cups</li>
+                            <li>78.3 lbs</li>
+                        </ul>
+                    </div>
+            </div>         
+        </div>
+
+        <div class="block meals protien">
+            <h5>Beef Bourguignon</h5>
+            <p>Total Orders: 90</p>
+            <div class="col3">
+                    <div class="row">
+                        <ul>
+                            <li>mashed potatoes</li>
+                            <li>heavy cream</li>
+                            <li>butter</li>
+                            <li>mushrooms</li>
+                        </ul>
+                    </div>
+                    <div class="row">
+                        <ul>
+                            <li>1 cup</li>
+                            <li>2 oz</li>
+                            <li>1 oz</li>
+                            <li>0.5 cup</li>
+                        </ul>
+                    </div>
+                    <div class="row">
+                        <ul>
+                            <li>1 * 90 = 90 cups</li>
+                            <!-- cup vs cups -->
+                            <li>180 oz</li>
+                            <li>90 oz</li>
+                            <li>45 cups</li>
+                        </ul>
+                    </div>
+            </div>         
+        </div>
+
+        <div class="block meals protien">
+            <h5>Chicken w/Mexican Mole</h5>
+            <p>Total Orders: 100</p>
+            <div class="col3">
+                    <div class="row">
+                        <ul>
+                            <li>chicken breast</li>
+                            <li>mole</li>
+                            <li>cilantro-lime rice</li>
+                            <li>black beans</li>
+                        </ul>
+                    </div>
+                    <div class="row">
+                        <ul>
+                            <li>5 oz</li>
+                            <li>2 oz</li>
+                            <li>1 cup</li>
+                            <li>0.5 cup</li>
+                        </ul>
+                    </div>
+                    <div class="row">
+                        <ul>
+                            <li>500 oz</li>
+                            <li>200 oz</li>
+                            <li>100 cups</li>
+                            <li>50 cups</li>
+                        </ul>
+                    </div>
+            </div>         
+        </div>
+
+        <div class="block meals protien">
+            <h5>Chipotle Ranch Chicken</h5>
+            <p>Total Orders: 100</p>
+            <div class="col3">
+                    <div class="row">
+                        <ul>
+                            <li>chicken breast</li>
+                            <li>mole</li>
+                            <li>cilantro-lime rice</li>
+                            <li>black beans</li>
+                        </ul>
+                    </div>
+                    <div class="row">
+                        <ul>
+                            <li>5 oz</li>
+                            <li>2 oz</li>
+                            <li>1 cup</li>
+                            <li>0.5 cup</li>
+                        </ul>
+                    </div>
+                    <div class="row">
+                        <ul>
+                            <li>500 oz</li>
+                            <li>200 oz</li>
+                            <li>100 cups</li>
+                            <li>50 cups</li>
+                        </ul>
+                    </div>
+            </div>         
+        </div>
+
+        <div class="block meals protien">
+            <h5>Garlic Herbed Salmon</h5>
+            <p>Total Orders: 100</p>
+            <div class="col3">
+                    <div class="row">
+                        <ul>
+                            <li>chicken breast</li>
+                            <li>mole</li>
+                            <li>cilantro-lime rice</li>
+                            <li>black beans</li>
+                        </ul>
+                    </div>
+                    <div class="row">
+                        <ul>
+                            <li>5 oz</li>
+                            <li>2 oz</li>
+                            <li>1 cup</li>
+                            <li>0.5 cup</li>
+                        </ul>
+                    </div>
+                    <div class="row">
+                        <ul>
+                            <li>500 oz</li>
+                            <li>200 oz</li>
+                            <li>100 cups</li>
+                            <li>50 cups</li>
+                        </ul>
+                    </div>
+            </div>         
+        </div>
+
+        <div class="block meals protien">
+            <h5>Thai Peanut Chicken</h5>
+            <p>Total Orders: 100</p>
+            <div class="col3">
+                    <div class="row">
+                        <ul>
+                            <li>chicken breast</li>
+                            <li>mole</li>
+                            <li>cilantro-lime rice</li>
+                            <li>black beans</li>
+                        </ul>
+                    </div>
+                    <div class="row">
+                        <ul>
+                            <li>5 oz</li>
+                            <li>2 oz</li>
+                            <li>1 cup</li>
+                            <li>0.5 cup</li>
+                        </ul>
+                    </div>
+                    <div class="row">
+                        <ul>
+                            <li>500 oz</li>
+                            <li>200 oz</li>
+                            <li>100 cups</li>
+                            <li>50 cups</li>
+                        </ul>
+                    </div>
+            </div>         
+        </div>
+
+        <button id="meals_btn" onclick="showmeals()">show meals</button>
+        <button id="close_btn">close</button>
+
+    </div>     <!-- temp div delete later -->
+
+    </div>
+
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+
+        toggleMeals = false;
+        mealsBtnNode = document.getElementById('meals_btn');
+        mealsNode = document.getElementsByClassName('meals');
+        tempNode = document.getElementById('temp');
+        var i; // ask Van if this should be in if statement
+
+        function createList() {
+            tempNode.style.display = 'block';
+        }
+
+        function showmeals() {
+            
+            if (toggleMeals == false) {
+                // var i;
+                for (i = 0; i < mealsNode.length; i++) {
+                    mealsNode[i].style.display = 'block';
+                    mealsBtnNode.innerHTML = "hide meals";
+                    toggleMeals = true;
+                }
+            } else {
+                // var i;
+                for (i = 0; i < mealsNode.length; i++) {
+                    mealsNode[i].style.display = 'none';
+                    mealsBtnNode.innerHTML = "show meals";
+                    toggleMeals = false;
+                }
+            }
+        }
+
+    </script>
+
+
+</body>
+</html>
