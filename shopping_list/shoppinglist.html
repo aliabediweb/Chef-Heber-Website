@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -97,12 +96,10 @@
             display: none;
         }
     </style>
-
 </head>
 
-
 <body>
-    
+
     <div id="app">
 
         <h1>{{ title }}</h1>
@@ -112,106 +109,9 @@
 
     <div id="temp">
 
-        <div class="block2">
-            <h5>Protiens</h5>
-            <div class="col3">
-                    <div class="row">
-                        <ul>
-                            <li>beef</li>
-                            <li>chicken</li>
-                            <li>salmon</li>
-                            <li>tofu</li>
-                        </ul>
-                    </div>
-                    <div class="row">
-                        <ul>
-                            <li>31.6 lbs</li>
-                            <li>28.2 lbs</li>
-                            <li>4.9 lbs</li>
-                            <li>7.2 lbs</li>
-                        </ul>
-                    </div>
-            </div>         
-        </div>
+        <div id="shoppingListContainer"></div>
 
-        <div class="block2">
-            <h5>Starches</h5>
-            <div class="col3">
-                    <div class="row">
-                        <ul>
-                            <li>potatoes</li>
-                            <li>cilantro-lime rice</li>
-                            <li>black rice</li>
-                            <li>pasta</li>
-                            <li>quinoa</li>
-                        </ul>
-                    </div>
-                    <div class="row">
-                        <ul>
-                            <li>74 cups?</li>
-                            <li>70 lbs?</li>
-                            <li>104.5 cups</li>
-                            <li>78.3 lbs</li>
-                        </ul>
-                    </div>
-            </div>         
-        </div>
-
-        <div class="block2">
-            <h5>Veggies</h5>
-            <div class="col3">
-                    <div class="row">
-                        <ul>
-                            <li>mushrooms</li>
-                            <li>carrots</li>
-                            <li>normandy</li>
-                            <li>asparagus</li>
-                            <li>green onions</li>
-                        </ul>
-                    </div>
-                    <div class="row">
-                        <ul>
-                            <li>74 cups?</li>
-                            <li>70 lbs?</li>
-                            <li>104.5 cups</li>
-                            <li>78.3 lbs</li>
-                            <li>78.3 lbs</li>
-                        </ul>
-                    </div>
-            </div>         
-        </div>
-
-        <div class="block2">
-            <h5>Sauces</h5>
-            <div class="col3">
-                    <div class="row">
-                        <ul>
-                            <li>fresh salsa</li>
-                            <li>salsa verde cashews</li>
-                            <li>thai peanut</li>
-                            <li>mole</li>
-                            <li>herbed sauce</li>
-                            <li>marinara</li>
-                            <li>al pastor</li>
-                            <li>chipotle ranch</li>
-                        </ul>
-                    </div>
-                    <div class="row">
-                        <ul>
-                            <li>74 cups?</li>
-                            <li>70 lbs?</li>
-                            <li>104.5 cups</li>
-                            <li>78.3 lbs</li>
-                            <li>74 cups?</li>
-                            <li>70 lbs?</li>
-                            <li>104.5 cups</li>
-                            <li>78.3 lbs</li>
-                        </ul>
-                    </div>
-            </div>         
-        </div>
-
-        <div class="block meals protien">
+        <!-- <div class="block meals protien">
             <h5>Beef Bourguignon</h5>
             <p>Total Orders: 90</p>
             <div class="col3">
@@ -234,7 +134,6 @@
                     <div class="row">
                         <ul>
                             <li>1 * 90 = 90 cups</li>
-                            <!-- cup vs cups -->
                             <li>180 oz</li>
                             <li>90 oz</li>
                             <li>45 cups</li>
@@ -365,9 +264,9 @@
                         </ul>
                     </div>
             </div>         
-        </div>
+        </div> -->
 
-        <button id="meals_btn" onclick="showmeals()">show meals</button>
+        <!-- <button id="meals_btn" onclick="showmeals()">show meals</button> -->
         <button id="close_btn">close</button>
 
     </div>     <!-- temp div delete later -->
@@ -377,6 +276,72 @@
     </div>
 
     <script src="app.js"></script>
+    <script type="text/javascript">
+
+        var jsonNew = {"items": [
+            {
+                "header": "Protiens",
+                "ingredients": {"beef": 0, "chicken": 0, "salmon": 0, "beefless ground": 0, "tofu": 0, "jackfruit": 0, "bacon": 0, "edamame": 0},
+                "units": "oz",
+            },
+            {
+                "header": "Starches",
+                "ingredients": {"mashed potatoes": 0, "cilantro-lime rice": 0, "turmeric rice": 4, "black rice": 0, "quinoa": 0, "beans": 0, "pasta": 0, "queso fresco": 0,},
+                "units": "cups",
+            },
+            {
+                "header": "Veggies",
+                "ingredients": {"mushrooms": 0, "carrots": 0, "normady": 0, "asparagus": 0, "green onions": 0, "red cabbage": 0, "broccoli": 0, "green beans": 0, "escabeche onions": 0, "cauliflower": 0, "roasted pineapple": 0, "pico de gallo": 0,},
+                "units": "cups",
+            },
+            {
+                "header": "Sauces",
+                "ingredients": {"fresh salsa": 0, "salsa verde cashews": 0, "thai peanut": 0, "mole": 0, "herbed sauce": 0, "marinara": 0, "al pastor": 0, "chipotle ranch": 0,},
+                "units": "oz",
+            },
+        ]};
+
+        var shoppingListContainerNode = document.getElementById("shoppingListContainer");
+        // block content:
+        var content = "";
+
+        // parse json structure to obtain data:
+        for (i in jsonNew.items) {
+            // store values for headers:
+            var header = jsonNew.items[i].header;
+            // store unit type (append after ingredient amount in appended)
+            var unit = jsonNew.items[i].units;
+            // append header to block content:
+            content += "<div class='block2'><h5>" + header + "</h5>";
+            // set up div / list for ingredient names:
+            content += "<div class='col3'><div class='row'><ul>";
+            // iterate through ingredients object to obtain ingredient name:
+            for (var ingredient in jsonNew.items[i].ingredients) {
+                // store ingredient name:
+                var ingredient;
+                // append ingredient (as list item):
+                content += "<li>" + ingredient + "</li>";
+            }
+            // end tags for ingredient name:
+            content += "</ul></div>";
+            // set up div / list for ingredient amounts:
+            content += "<div class='row'><ul>";
+            // iterate through ingredients object to obtain ingredient amount:
+            for (var ingredient in jsonNew.items[i].ingredients) {
+                // store ingredient name:
+                var ingredientAmt = jsonNew.items[i].ingredients[ingredient];
+                // append ingredient amount (as list item):
+                content += "<li>" + ingredientAmt + " " + unit + "</li>"
+            }
+            // end tags for ingredient amount:
+            content += "</ul></div>";
+            // end tags for block content:
+            content += "</div></div>";
+            // append content to block:
+            shoppingListContainerNode.innerHTML = content;
+        }
+    </script>
+    
     <script>
 
         toggleMeals = false;
@@ -409,7 +374,6 @@
         }
 
     </script>
-
 
 </body>
 </html>
