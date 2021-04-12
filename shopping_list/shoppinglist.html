@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
     <title>Document</title>
-    <script src="https://unpkg.com/vue@next"></script>
     <style>
         body {
             margin-top: 50px;
@@ -99,9 +99,9 @@
 
     <div id="app">
 
-        <h1>{{ title }}</h1>
+        <h1>Chef Heber Shopping List</h1>
         <h3>Upload .xls or .xlsx file:</h3>
-        <input type="file" id="upload" accept=".xlsx">
+        <input type="file" id="input" accept=".xlsx">
         <button onClick="createList()">Create Shopping List</button>
 
     <div id="temp">
@@ -272,10 +272,63 @@
 
     </div>
 
-    <script src="app.js"></script>
+    <script>
+        var input = document.getElementById('input');
+        function handleFile(e) {
+            var files = e.target.files, f = files[0];
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                var data = new Uint8Array(e.target.result);
+                // read workbook:
+                var workbook = XLSX.read(data, {type: 'array'});
+                // first sheet:
+                var sheet1 = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[sheet1];
+                // initialize arrays for cell addresses:
+                var i;
+                let mealNameCells = [];
+                let mealTotalCells = [];
+                for (i = 7; i < 26; i++) {
+                    // add values '7'-'25' to both arrays:
+                    mealNameCells.push("A"+i);
+                    mealTotalCells.push("G"+i);
+                }
+                // initialize object to store arrays:
+                var mealNamesTotals = {
+                    mealNames: [],
+                    mealTotals: []
+                };
+                // iterate through cell addresses array to get meal names and meal PID:
+                mealNameCells.forEach(getMealNames);
+                function getMealNames(item, index) {
+                    var mealNameCellAddress = item;
+                    var mealNameCell = worksheet[mealNameCellAddress];
+                    // return undefined if no cell value:
+                    var mealNameCellValue = (mealNameCell ? mealNameCell.v : undefined);
+                    // push cell value to mealNames array (in mealNamesTotals object): 
+                    mealNamesTotals.mealNames.push(mealNameCellValue);
+                }
+                // iterate through cell addresses array to get meal totals:
+                mealTotalCells.forEach(getMealTotals);
+                function getMealTotals(item, index) {
+                    var mealTotalCellAddress = item;
+                    var mealTotalCell = worksheet[mealTotalCellAddress];
+                    // return undefined if no cell value:
+                    var mealTotalCellValue = (mealTotalCell ? mealTotalCell.v : undefined);
+                    // push cell value to mealTotals array (in mealNamesTotals object): 
+                    mealNamesTotals.mealTotals.push(mealTotalCellValue);
+                }
+                // view arrays in object:
+                console.log(mealNamesTotals.mealNames);
+                console.log(mealNamesTotals.mealTotals);
+            };
+            reader.readAsArrayBuffer(f);
+        }
+        input.addEventListener('change', handleFile, false);
+    </script>
     <script type="text/javascript">
 
-        var jsonNew = {"items": [
+        var shoppingListMain = {"items": [
             {
                 "header": "Protiens",
                 "ingredients": {"beef": 0, "chicken": 0, "salmon": 0, "beefless ground": 0, "tofu": 0, "jackfruit": 0, "bacon": 0, "edamame": 0},
@@ -303,17 +356,17 @@
         var content = "";
 
         // parse json structure to obtain data:
-        for (i in jsonNew.items) {
+        for (i in shoppingListMain.items) {
             // store values for headers:
-            var header = jsonNew.items[i].header;
-            // store unit type (append after ingredient amount in appended)
-            var unit = jsonNew.items[i].units;
+            var header = shoppingListMain.items[i].header;
+            // store unit (append after ingredient amount in appended):
+            var unit = shoppingListMain.items[i].units;
             // append header to block content:
             content += "<div class='block2'><h5>" + header + "</h5>";
             // set up div / list for ingredient names:
             content += "<div class='col3'><div class='row'><ul>";
             // iterate through ingredients object to obtain ingredient name:
-            for (var ingredient in jsonNew.items[i].ingredients) {
+            for (var ingredient in shoppingListMain.items[i].ingredients) {
                 // store ingredient name:
                 var ingredient;
                 // append ingredient (as list item):
@@ -324,10 +377,10 @@
             // set up div / list for ingredient amounts:
             content += "<div class='row'><ul>";
             // iterate through ingredients object to obtain ingredient amount:
-            for (var ingredient in jsonNew.items[i].ingredients) {
+            for (var ingredient in shoppingListMain.items[i].ingredients) {
                 // store ingredient name:
-                var ingredientAmt = jsonNew.items[i].ingredients[ingredient];
-                // append ingredient amount (as list item):
+                var ingredientAmt = shoppingListMain.items[i].ingredients[ingredient];
+                // append ingredient amount and unit (as list item):
                 content += "<li>" + ingredientAmt + " " + unit + "</li>"
             }
             // end tags for ingredient amount:
