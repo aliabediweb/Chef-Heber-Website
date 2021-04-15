@@ -274,6 +274,7 @@
 
     <script>
         var input = document.getElementById('input');
+
         function handleFile(e) {
             var files = e.target.files, f = files[0];
             var reader = new FileReader();
@@ -288,7 +289,7 @@
                 var i;
                 let mealNameCells = [];
                 let mealTotalCells = [];
-                for (i = 7; i < 26; i++) {
+                for (i = 7; i < 24; i++) {
                     // add values '7'-'25' to both arrays:
                     mealNameCells.push("A"+i);
                     mealTotalCells.push("G"+i);
@@ -296,6 +297,7 @@
                 // initialize object to store arrays:
                 var mealNamesTotals = {
                     mealNames: [],
+                    pids: [],
                     mealTotals: []
                 };
                 // iterate through cell addresses array to get meal names and meal PID:
@@ -305,8 +307,14 @@
                     var mealNameCell = worksheet[mealNameCellAddress];
                     // return undefined if no cell value:
                     var mealNameCellValue = (mealNameCell ? mealNameCell.v : undefined);
+                    // extract meal name and pid:
+                    var pos = mealNameCellValue.indexOf('(');
+                    var mealName = mealNameCellValue.slice(0,pos-1)
+                    var pid = mealNameCellValue.slice(pos+5,-1)
+                    console.log(mealName + " - " + pid);
                     // push cell value to mealNames array (in mealNamesTotals object): 
-                    mealNamesTotals.mealNames.push(mealNameCellValue);
+                    mealNamesTotals.mealNames.push(mealName);
+                    mealNamesTotals.pids.push(pid);
                 }
                 // iterate through cell addresses array to get meal totals:
                 mealTotalCells.forEach(getMealTotals);
@@ -320,13 +328,13 @@
                 }
                 // view arrays in object:
                 console.log(mealNamesTotals.mealNames);
+                console.log(mealNamesTotals.pids);
                 console.log(mealNamesTotals.mealTotals);
             };
             reader.readAsArrayBuffer(f);
         }
+        
         input.addEventListener('change', handleFile, false);
-    </script>
-    <script type="text/javascript">
 
         var shoppingListMain = {"items": [
             {

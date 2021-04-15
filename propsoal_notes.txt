@@ -1,0 +1,19 @@
+Proposal Notes:
+- website features:
+	> menu with meal description, ingredients, and nutrition facts
+	> custom ordering platform (chef can view orders, chat with customers, and set up coupons/deals)
+	> custom content management (chef can edit meals, prices, etc)
+- phases:
+	> phase1 - ordering platform without auto generating shopping list (eta 6 weeks)
+	> phase2 - attitional feature that auto generates shopping list (eta 2 weeks after phase 1)
+- contact info:
+	> chef Heber Rivera
+	> chefhebs@gmail.com
+	> 8017094788
+- cost:
+	> $1500 ($500 to start, $500 p1, $500 p2) 
+	> $300/mo to use our ordering platform and content management system (CMS - to edit meals/recipes etc)
+	> 1% transaction fee - database hosting charges
+- extras:
+	> our marketing services
+	>  if you are not satisfied with the price we can negociate

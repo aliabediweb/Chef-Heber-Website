@@ -1,26 +1,165 @@
 [
     {
-        "name": "Lemon Garlic Tilapia",
-        "pid": 343453,
-        "category": ["Lunch/Dinner", "Keto"],
+        "name": "?",
+        "pid": 123,
+        "category": ["?"],
+        "description": "?",
         "ingredients": {
-            "salmon": 1,
-            "rice": 2,
-            "veg1": 3,
-            "veg2": 4,
-            "veg3": 4
-        }                                                              
+            "?": "?"
+        }                                                             
+    },
+    {
+        "name": "Buffalo Cauliflower Bites",
+        "pid": 35487,
+        "category": ["?"],
+        "description": "?",
+        "ingredients": {
+            "forbidden black rice": "0.3 cup",
+            "asparagus": "0.25 cup",
+            "red cabbage": "0.25 cup",
+            "red bell peppers": "0.25 cup",
+            "cashews": "0.06 cup",
+            "nutritional yeast": "1 g",
+            "paprika": "0.2 tbsp",
+            "cauliflower": "1 cup",
+            "brown rice flour": "0.25 cup",
+            "buffalo sauce": "1 oz",
+            "salt": "0.2 tsp"
+        }                                                             
+    },
+    {
+        "name": "Chipotle Chicken w/ Southwest Quinoa",
+        "pid": 36730,
+        "category": ["?"],
+        "description": "?",
+        "ingredients": {
+            "chicken breast": "5 oz",
+            "quinoa": "1 cup",
+            "black beans": "0.5 cup",
+            "sweet yellow corn": "0.25 cup",
+            "red bell peppers": "0.25 cup",
+            "red cabbage": "0.25 cup",
+            "pico de gallo": "2 tbsp",
+            "chipotle peppers in abodo sauce": "0.25 oz",
+            "cashwes": "0.5 oz",
+            "salt": "1 tsp"
+        }                                                             
+    },
+    {
+        "name": "Garlic-Herbed Roasted Salmon",
+        "pid": 36173,
+        "category": ["?"],
+        "description": "?",
+        "ingredients": {
+            "salmon": "6 oz",
+            "rice": "1 cup",
+            "asparagus": "0.5 cup",
+            "almonds": "1 oz",
+            "dried cranberries": "0.25 cup",
+            "parsley": "1 tbsp",
+            "olive oil": "1 tbsp",
+            "minced garlic": "1 tsp",
+            "turmeric powder": "1 tsp",
+            "lemon juice": "0.5 oz",
+            "salt": ".02 tsp"
+        }                                                             
+    },
+    {
+        "name": "KETO Mediterranean Omelette",
+        "pid": 37005,
+        "category": ["Keto"],
+        "description": "4 large eggs omelette mixed with sautéed mushrooms, bell pepper, spinach and cheese.",
+        "ingredients": {
+            "egg": "4 large",
+            "spinach": "0.33 cup",
+            "peppers": "0.15 cup chopped",
+            "bacon": "0.5 slice",
+            "salsa": "2 oz",
+            "salt": "2 tsp"
+        }                                                             
+    },
+    {
+        "name": "KETO Thai-Peanut Chicken",
+        "pid": 36179,
+        "category": ["Keto"],
+        "description": "Marinated chicken breast, served with fresh carrots, red cabbage and topped with thai-peanut sauce and green onions.",
+        "ingredients": {
+            "chicken breast": "6 oz",
+            "sweet chili sauce": "2 tbsp",
+            "red cabbage": "0.33 cup chopped",
+            "carrots": "0.5 cup chopped",
+            "green onions": "1 tbsp",
+            "peanuts": "1 oz",
+            "peanut butter": "0.5 tbsp",
+            "coconut milk": "1 oz",
+            "bacon": "1 slice"
+        }                                                             
+    },
+    {
+        "name": "Lemon Garlic Tilapia",
+        "pid": 34469,
+        "category": ["Lunch/Dinner"],
+        "description": "Oven-baked tilapia filet served with wild rice pilaf, creamy lime-garlic sauce (creamed with cashews) and garden vegetables.",
+        "ingredients": {
+            "tilapia": 5,
+            "normandy blend": 0.65,
+            "red cabbage": 0.15,
+            "parsley": 1,
+            "garlic": 1,
+            "lemon juice": 0.5,
+            "salt": 0.2,
+            "wild rice": 0.5,
+            "olive oil": 1,
+            "cashews": 0.25,
+            "long-grain brown rice": 0.5
+        }                                                             
     },
     {
         "name": "Thai-Peanut Chicken",
-        "pid": 343453,
-        "category": ["Lunch/Dinner", "Keto"],
+        "pid": 36178,
+        "category": ["Lunch/Dinner"],
+        "description": "Marinated chicken breast, served with quinoa pilaf, fresh carrots, red cabbage and topped with thai-peanut sauce and green onions.",
         "ingredients": {
-            "salmon": 1,
-            "rice": 2,
-            "veg1": 3,
-            "veg2": 4,
-            "veg3": 4
+            "chicken breast": 5,
+            "sweet chili sauce": 2,
+            "quinoa": 1,
+            "red cabbage": 0.5,
+            "carrots": 0.5,
+            "green onions": 1,
+            "peanuts": 0.1,
+            "peanut butter": 0.5,
+            "coconut milk": 0.25,
+            "coconut aminos": 1
         }                                                              
-    }
+    },
+    {
+        "name": "Mozzarella Chicken w/ Marinara",
+        "pid": 37003,
+        "category": ["Lunch/Dinner"],
+        "description": "Marinated chicken breast covered with house-made marinara sauce and topped with fresh mozzarella. Served with roasted baby potatoes and fresh garden vegetables.",
+        "ingredients": {
+            "chicken breast": "5 oz",
+            "baby backed potatoes": "5 oz",
+            "normandy blend": "0.65 oz",
+            "marinara sauce": "1 oz",
+            "mozzarella cheese": "1 oz",
+            "parsley": "0.5 tbsp",
+            "olive oil": "0.25 tbsp"
+        }                                                              
+    },
+    {
+        "name": "Pulled Pork Mexican Pibil Style",
+        "pid": 37006,
+        "description": "Slow cooked pork shoulder marinated with Mexican spices, topped with escabeche onions. Served with cilantro-lime rice and black refried beans.",
+        "category": ["Lunch/Dinner"],
+        "ingredients": {
+            "pulled pork": "5 oz",
+            "onions": "1 cup chopped",
+            "coriander": "0.15 cup",
+            "rice": "0.5 cup",
+            "beans": "0.5 cup",
+            "salt": "0.25 tsp",
+            "achiote paste": "0.1 oz"
+        }                                                              
+    } 
 ]
