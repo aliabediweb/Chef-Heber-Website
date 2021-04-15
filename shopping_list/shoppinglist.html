@@ -398,6 +398,13 @@
             // append content to block:
             shoppingListContainerNode.innerHTML = content;
         }
+        document.addEventListener('DOMContentLoaded',()=>{
+            fetch('meals.json').then(res=>res.json()).then(data=>{
+                console.log(data);
+            })
+        })
+
+
     </script>
     
     <script>
