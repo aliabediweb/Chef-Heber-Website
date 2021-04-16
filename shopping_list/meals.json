@@ -28,6 +28,76 @@
         }                                                             
     },
     {
+        "name": "Sriracha Chickpea Buddha Bowl",
+        "pid": 34450,
+        "category": ["Plan-Based"],
+        "description": "?",
+        "ingredients": {
+        "Hot sauce, Sriracha":	"1 tsp",
+        "Chickpeas (garbanzo beans, bengal gram), mature seeds, cooked, boiled, without salt":	"0.5 cup",
+        "Spinach, raw":	"2 cup",
+        "Quinoa, cooked": "1 cup",
+        "Cabbage, red, raw": "0.25 cup chopped",
+        "grape tomato":	"75 gram",
+        "Cucumber, peeled, raw": "0.25 cup pared chopped",
+        "Peppers, bell, sweet, red, raw": "0.25 cup chopped",
+        "Nuts, cashew nuts, raw":	"0.15 cup whole",
+        "Distilled White Vinegar":	"1 tbsp",
+        "nutritional yeast": "1 gram",
+        "Spice Italian Seasoning Mix":	"0.5 .125 oz = 1/8 1oz pkt",
+        "Kosher Salt":	"0.3 tsp"
+        }                                                             
+    },
+    {
+        "name": "Vegan Swedish Meatballs",
+        "pid": 34476,
+        "category": ["Plan-Based"],
+        "description": "?",
+        "ingredients": {
+            "Meatballs, meatless":	"4 oz",
+            "Potatoes, russet, flesh and skin, raw":	"1.6 0.5 cup diced",
+            "Nuts, cashew nuts, raw":	"0.15 cup whole",
+            "Kirkland Normandy Blend": 	"1 cup",
+            "Kosher Salt":"0.05 tsp",
+            "Tamari Gluten Free Soy Sauce":	"1 tbsp"
+        }                                                             
+    },
+    {
+        "name": "Thai-Peanut Tofu",
+        "pid": 36180,
+        "category": ["Plan-Based"],
+        "description": "?",
+        "ingredients": {
+            "Tofu, raw, firm, prepared with calcium sulfate":	"5 oz",
+            "Quinoa, cooked":	"1 cup",
+            "Carrots, raw":	"0.5 cup chopped",
+            "Cabbage, red, raw": "0.5 cup chopped",
+            "Mae Ploy Sweet Chili Sauce": "2 Tbsp",
+            "Peanut butter, smooth style, without salt": "1 tbsp",
+            "Peanuts, all types, dry-roasted, without salt": "0.1 oz",
+            "Edamame Soybeans Shelled":	"0.3 1/2 cup",
+            "Coconut Secret Coconut Aminos": "0.5 tsp",
+            "Nuts, coconut milk, canned (liquid expressed from grated meat and water)":	"0.25 oz"
+        }                                                             
+    },
+
+    {
+        "name": "Vegan Jackfruit Mexican Pibil Style",
+        "pid": 37009,
+        "category": ["Plan-Based"],
+        "description": "?",
+        "ingredients": {
+            "Organic Unseasoned Young Jackfruit Pieces": "1/2 cup",
+            "Achiote": "0.15 1 oz",
+            "Orange juice, raw": "1 fl oz",
+            "Rice, brown, long-grain, cooked": "1 1 cup",
+            "Corn, sweet, yellow, frozen, kernels cut off cob, boiled, drained, without salt":	"0.25 1 cup",
+            "Beans, black, mature seeds, cooked, boiled, without salt" : "0.5 1 cup",
+            "Red Onion": "0.15 cup sliced"
+        }                                                             
+    },
+
+    {
         "name": "Chipotle Chicken w/ Southwest Quinoa",
         "pid": 36730,
         "category": ["?"],
@@ -65,6 +135,21 @@
         }                                                             
     },
     {
+        "name": "KETO Mozzarella Chicken w/Marinara",
+        "pid": 37004,
+        "category": ["Keto"],
+        "description": "4 large eggs omelette mixed with sautéed mushrooms, bell pepper, spinach and cheese.",
+        "ingredients": {
+            "Chicken, broilers or fryers, breast, meat only, cooked, roasted":	"5 oz",
+            "Sauce, pasta, spaghetti/marinara, ready-to-serve":	"2 oz",
+            "Cheese, mozzarella, whole milk": "1 oz",
+            "Parsley, fresh": "0.5 tbsp",
+            "Olive Oil, extra virgin":	"0.25 tbsp",
+            "Pork, cured, bacon, cooked, baked": "1 slice cooked",
+            "Broccoli, cooked, boiled, drained, without salt":	"0.5 cup chopped"
+        }                                                             
+    },
+    {
         "name": "KETO Mediterranean Omelette",
         "pid": 37005,
         "category": ["Keto"],
@@ -76,6 +161,20 @@
             "bacon": "0.5 slice",
             "salsa": "2 oz",
             "salt": "2 tsp"
+        }                                                             
+    },
+    {
+        "name": "KETO Pulled Pork Mexican Pibil Style",
+        "pid": 37008,
+        "category": ["Keto"],
+        "description": "?",
+        "ingredients": {
+            "Pulled Pork": "5 oz",
+            "Onions, raw": "0.1 cup chopped",
+            "Kosher Salt":	"0.25 tsp",
+            "Achiote Paste": "0.05 oz",
+            "Pork, cured, bacon, cooked, baked": "0.5 slice cooked",
+            "Broccoli, cooked, boiled, drained, without salt":	"1 cup, chopped"
         }                                                             
     },
     {
