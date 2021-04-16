@@ -1,27 +1,18 @@
 [
     {
-        "name": "?",
-        "pid": 123,
-        "category": ["?"],
-        "description": "?",
-        "ingredients": {
-            "?": "?"
-        }                                                             
-    },
-    {
         "name": "Buffalo Cauliflower Bites",
         "pid": 35487,
         "category": ["?"],
         "description": "?",
         "ingredients": {
-            "forbidden black rice": "0.3 cup",
+            "forbidden black rice": "0.3 cup (cooked)",
             "asparagus": "0.25 cup",
-            "red cabbage": "0.25 cup",
-            "red bell peppers": "0.25 cup",
-            "cashews": "0.06 cup",
-            "nutritional yeast": "1 g",
+            "red cabbage": "0.25 cup (chopped)",
+            "red bell peppers": "0.25 cup (chopped)",
+            "cashews": "0.06 cup (whole)",
+            "nutritional yeast": "1 gram",
             "paprika": "0.2 tbsp",
-            "cauliflower": "1 cup",
+            "cauliflower": "1 cup (1 inch pieces)",
             "brown rice flour": "0.25 cup",
             "buffalo sauce": "1 oz",
             "salt": "0.2 tsp"
@@ -30,22 +21,22 @@
     {
         "name": "Sriracha Chickpea Buddha Bowl",
         "pid": 34450,
-        "category": ["Plan-Based"],
+        "category": ["Plant-Based"],
         "description": "?",
         "ingredients": {
-        "Hot sauce, Sriracha":	"1 tsp",
-        "Chickpeas (garbanzo beans, bengal gram), mature seeds, cooked, boiled, without salt":	"0.5 cup",
-        "Spinach, raw":	"2 cup",
-        "Quinoa, cooked": "1 cup",
-        "Cabbage, red, raw": "0.25 cup chopped",
-        "grape tomato":	"75 gram",
-        "Cucumber, peeled, raw": "0.25 cup pared chopped",
-        "Peppers, bell, sweet, red, raw": "0.25 cup chopped",
-        "Nuts, cashew nuts, raw":	"0.15 cup whole",
-        "Distilled White Vinegar":	"1 tbsp",
-        "nutritional yeast": "1 gram",
-        "Spice Italian Seasoning Mix":	"0.5 .125 oz = 1/8 1oz pkt",
-        "Kosher Salt":	"0.3 tsp"
+            "hot sauce": "1 tsp",
+            "garbanzo beans": "0.5 cup",
+            "spinach": "2 cups",
+            "quinoa": "1 cup",
+            "red cabbage": "0.25 cup (chopped)",
+            "grape tomatoes": "75 grams",
+            "cucumbers": "0.25 cup (chopped)",
+            "red bell peppers": "0.25 cup (chopped)",
+            "cashews": "0.15 cup (whole)",
+            "white vinegar": "1 tbsp",
+            "nutritional yeast": "1 gram",
+            "Italian seasoning mix": "0.0625 oz",
+            "Kosher Salt":	"0.3 tsp"
         }                                                             
     },
     {
@@ -54,12 +45,12 @@
         "category": ["Plan-Based"],
         "description": "?",
         "ingredients": {
-            "Meatballs, meatless":	"4 oz",
-            "Potatoes, russet, flesh and skin, raw":	"1.6 0.5 cup diced",
-            "Nuts, cashew nuts, raw":	"0.15 cup whole",
-            "Kirkland Normandy Blend": 	"1 cup",
-            "Kosher Salt":"0.05 tsp",
-            "Tamari Gluten Free Soy Sauce":	"1 tbsp"
+            "meatless meatballs": "4 oz",
+            "russet potatoes": "0.8 cup (diced)",
+            "cashews": "0.15 cup (whole)",
+            "normandy blend": "1 cup",
+            "salt": "0.05 tsp",
+            "soy sauce": "1 tbsp"
         }                                                             
     },
     {
@@ -68,35 +59,88 @@
         "category": ["Plan-Based"],
         "description": "?",
         "ingredients": {
-            "Tofu, raw, firm, prepared with calcium sulfate":	"5 oz",
-            "Quinoa, cooked":	"1 cup",
-            "Carrots, raw":	"0.5 cup chopped",
-            "Cabbage, red, raw": "0.5 cup chopped",
-            "Mae Ploy Sweet Chili Sauce": "2 Tbsp",
-            "Peanut butter, smooth style, without salt": "1 tbsp",
-            "Peanuts, all types, dry-roasted, without salt": "0.1 oz",
-            "Edamame Soybeans Shelled":	"0.3 1/2 cup",
-            "Coconut Secret Coconut Aminos": "0.5 tsp",
-            "Nuts, coconut milk, canned (liquid expressed from grated meat and water)":	"0.25 oz"
+            "tofu (firm)": "5 oz",
+            "quinoa": "1 cup (cooked)",
+            "carrots": "0.5 cup (chopped)",
+            "red cabbage": "0.5 cup (chopped)",
+            "sweet chili sauce": "2 tbsp",
+            "peanut butter": "1 tbsp",
+            "peanuts (dry-roasted)": "0.1 oz",
+            "edamame (shelled)": "0.15 cup",
+            "coconut aminos": "0.5 tsp",
+            "coconut milk":	"0.25 oz"
         }                                                             
     },
-
+    {
+        "name": "Salsa Verde Chicken",
+        "pid": 34699,
+        "category": ["?"],
+        "description": "?",
+        "ingredients": {
+            "chicken breast": "5 oz",
+            "salsa verde": "1.5 oz",
+            "long-grain brown rice": "0.5 cup (cooked)",
+            "sweet yellow corn": "0.06 cup",
+            "paprika": "0.2 tbsp",
+            "black beans": "0.5 cup",
+            "cheddar cheese": "0.06 cup (shredded)",
+            "salt": "0.2 tsp",
+            "red onion (pickled)": "2 tbsp",
+            "heavy whipping cream": "0.001 fl-oz"
+        }                                                             
+    },
+    {
+        "name": "Vegan Jackfruit + Southwest Rice",
+        "pid": 34693,
+        "category": ["Vegan"],
+        "description": "?",
+        "ingredients": {
+            "long-grain brown rice": "1 cup (cooked)",
+            "sweet yellow corn": "0.25 cup",
+            "coriander (cilantro)": "0.25 cup",
+            "red bell peppers": "0.25 cup (chopped)",
+            "Organic young jackfruit": "0.5 cup",
+            "cashews": "0.15 cup",
+            "nutritional yeast": "1 gram",
+            "garlic powder": "0.1 tsp",
+            "pico de gallo": "2 tbsp",
+            "abodo seasoning": "0.25 tsp",
+            "salt": "0.1 tsp",
+            "BBQ sauce": "4 tbsp"
+        }                                                             
+    },
     {
         "name": "Vegan Jackfruit Mexican Pibil Style",
         "pid": 37009,
         "category": ["Plan-Based"],
         "description": "?",
         "ingredients": {
-            "Organic Unseasoned Young Jackfruit Pieces": "1/2 cup",
-            "Achiote": "0.15 1 oz",
-            "Orange juice, raw": "1 fl oz",
-            "Rice, brown, long-grain, cooked": "1 1 cup",
-            "Corn, sweet, yellow, frozen, kernels cut off cob, boiled, drained, without salt":	"0.25 1 cup",
-            "Beans, black, mature seeds, cooked, boiled, without salt" : "0.5 1 cup",
-            "Red Onion": "0.15 cup sliced"
+            "Organic young jackfruit": "0.5 cup",
+            "achiote": "0.15 oz",
+            "orange juice": "1 fl-oz",
+            "long-grain brown rice": "1 cup (cooked)",
+            "sweet yellow corn": "0.25 cup",
+            "black beans": "0.5 cup",
+            "red onion": "0.15 cup (sliced)"
         }                                                             
     },
-
+    {
+        "name": "Mushroom & Lentil Ragu Pasta",
+        "pid": 35643,
+        "category": ["?"],
+        "description": "?",
+        "ingredients": {
+            "Organic black bean and sesame fettuccine": "2 oz",
+            "lentils": "0.25 cup",
+            "tomatoes (canned, crushed)": "1 gram",
+            "kale": "1 cup (chopped)",
+            "nutritional yeast": "1 gram",
+            "white mushrooms": "1 cup",
+            "cashews": "0.16 cup" ,
+            "turmeric powder": "1 tsp",
+            "salt": "0.2 tsp"
+        }                                                             
+    },
     {
         "name": "Chipotle Chicken w/ Southwest Quinoa",
         "pid": 36730,
@@ -107,11 +151,11 @@
             "quinoa": "1 cup",
             "black beans": "0.5 cup",
             "sweet yellow corn": "0.25 cup",
-            "red bell peppers": "0.25 cup",
-            "red cabbage": "0.25 cup",
+            "red bell peppers": "0.25 cup (chopped)",
+            "red cabbage": "0.25 cup (chopped)",
             "pico de gallo": "2 tbsp",
             "chipotle peppers in abodo sauce": "0.25 oz",
-            "cashwes": "0.5 oz",
+            "cashews": "0.5 oz",
             "salt": "1 tsp"
         }                                                             
     },
@@ -122,16 +166,16 @@
         "description": "?",
         "ingredients": {
             "salmon": "6 oz",
-            "rice": "1 cup",
+            "long-grain brown rice": "1 cup (cooked)",
             "asparagus": "0.5 cup",
-            "almonds": "1 oz",
-            "dried cranberries": "0.25 cup",
+            "almonds": "0.1 oz",
+            "dried cranberries": "0.025 cup",
             "parsley": "1 tbsp",
             "olive oil": "1 tbsp",
-            "minced garlic": "1 tsp",
-            "turmeric powder": "1 tsp",
-            "lemon juice": "0.5 oz",
-            "salt": ".02 tsp"
+            "garlic (minced)": "1 tsp",
+            "turmeric powder": "0.25 tsp",
+            "lemon juice": "0.05 oz",
+            "salt": ".2 tsp"
         }                                                             
     },
     {
@@ -140,13 +184,13 @@
         "category": ["Keto"],
         "description": "4 large eggs omelette mixed with sautéed mushrooms, bell pepper, spinach and cheese.",
         "ingredients": {
-            "Chicken, broilers or fryers, breast, meat only, cooked, roasted":	"5 oz",
-            "Sauce, pasta, spaghetti/marinara, ready-to-serve":	"2 oz",
-            "Cheese, mozzarella, whole milk": "1 oz",
-            "Parsley, fresh": "0.5 tbsp",
-            "Olive Oil, extra virgin":	"0.25 tbsp",
-            "Pork, cured, bacon, cooked, baked": "1 slice cooked",
-            "Broccoli, cooked, boiled, drained, without salt":	"0.5 cup chopped"
+            "chicken breast": "5 oz",
+            "marinara sauce": "2 oz",
+            "mozzarella cheese": "1 oz",
+            "parsley": "0.5 tbsp",
+            "olive oil": "0.25 tbsp",
+            "bacon": "1 slice",
+            "broccoli":	"0.5 cup (chopped)"
         }                                                             
     },
     {
@@ -155,12 +199,12 @@
         "category": ["Keto"],
         "description": "4 large eggs omelette mixed with sautéed mushrooms, bell pepper, spinach and cheese.",
         "ingredients": {
-            "egg": "4 large",
+            "eggs": "4 (large)",
             "spinach": "0.33 cup",
-            "peppers": "0.15 cup chopped",
+            "red bell peppers": "0.15 cup (chopped)",
             "bacon": "0.5 slice",
             "salsa": "2 oz",
-            "salt": "2 tsp"
+            "salt": "0.2 tsp"
         }                                                             
     },
     {
@@ -169,12 +213,12 @@
         "category": ["Keto"],
         "description": "?",
         "ingredients": {
-            "Pulled Pork": "5 oz",
-            "Onions, raw": "0.1 cup chopped",
-            "Kosher Salt":	"0.25 tsp",
-            "Achiote Paste": "0.05 oz",
-            "Pork, cured, bacon, cooked, baked": "0.5 slice cooked",
-            "Broccoli, cooked, boiled, drained, without salt":	"1 cup, chopped"
+            "pork": "5 oz",
+            "onions": "0.1 cup (chopped)",
+            "salt":	"0.25 tsp",
+            "achiote paste": "0.05 oz",
+            "bacon": "0.5 slice",
+            "broccoli":	"1 cup (chopped)"
         }                                                             
     },
     {
@@ -185,13 +229,32 @@
         "ingredients": {
             "chicken breast": "6 oz",
             "sweet chili sauce": "2 tbsp",
-            "red cabbage": "0.33 cup chopped",
-            "carrots": "0.5 cup chopped",
+            "red cabbage": "0.33 cup (chopped)",
+            "carrots": "0.5 cup (chopped)",
             "green onions": "1 tbsp",
-            "peanuts": "1 oz",
+            "peanuts (dry-roasted)": "1 oz",
             "peanut butter": "0.5 tbsp",
             "coconut milk": "1 oz",
+            "coconut aminos": "0.5 tsp",
             "bacon": "1 slice"
+        }                                                             
+    },
+    {
+        "name": "Sweet Potato Mole Enchiladas",
+        "pid": 34918,
+        "category": ["?"],
+        "description": "?",
+        "ingredients": {
+            "sweet potato": "0.75 cup",
+            "torillas": "56 grams",
+            "medium-grain brown rice": "0.5 cup (cooked)",
+            "black beans": "0.5 cup",
+            "tomatoes (roma)": "0.15 cup",
+            "red onions": "1 cup (sliced)",
+            "coriander (cilantro)": "0.025 cup",
+            "mole poblano sauce": "0.5 oz",
+            "salt": "0.2 tsp",
+            "lime juice": "0.5 fl-oz"
         }                                                             
     },
     {
@@ -200,17 +263,17 @@
         "category": ["Lunch/Dinner"],
         "description": "Oven-baked tilapia filet served with wild rice pilaf, creamy lime-garlic sauce (creamed with cashews) and garden vegetables.",
         "ingredients": {
-            "tilapia": 5,
-            "normandy blend": 0.65,
-            "red cabbage": 0.15,
-            "parsley": 1,
-            "garlic": 1,
-            "lemon juice": 0.5,
-            "salt": 0.2,
-            "wild rice": 0.5,
-            "olive oil": 1,
-            "cashews": 0.25,
-            "long-grain brown rice": 0.5
+            "tilapia": "5 oz",
+            "normandy blend": "0.65 cup",
+            "red cabbage": "0.15 cup (chopped)",
+            "parsley": "1 tbsp",
+            "garlic": "1 clove",
+            "lemon juice": "0.5 oz",
+            "salt": "0.2 tsp",
+            "wild rice": "0.5 cup",
+            "olive oil": "1 tbsp",
+            "cashews": "0.25 oz",
+            "long-grain brown rice": "0.5 cup (cooked)"
         }                                                             
     },
     {
@@ -219,16 +282,16 @@
         "category": ["Lunch/Dinner"],
         "description": "Marinated chicken breast, served with quinoa pilaf, fresh carrots, red cabbage and topped with thai-peanut sauce and green onions.",
         "ingredients": {
-            "chicken breast": 5,
-            "sweet chili sauce": 2,
-            "quinoa": 1,
-            "red cabbage": 0.5,
-            "carrots": 0.5,
-            "green onions": 1,
-            "peanuts": 0.1,
-            "peanut butter": 0.5,
-            "coconut milk": 0.25,
-            "coconut aminos": 1
+            "chicken breast": "5 oz",
+            "sweet chili sauce": "2 tbsp",
+            "quinoa": "1 cup (cooked)",
+            "red cabbage": "0.5 cup (chopped)",
+            "carrots": "0.5 cup (chopped)",
+            "green onions": "1 tbsp",
+            "peanuts (dry-roasted)": "0.1 oz",
+            "peanut butter": "0.5 tbsp",
+            "coconut milk": "0.25 oz",
+            "coconut aminos": "1 tsp"
         }                                                              
     },
     {
@@ -238,9 +301,9 @@
         "description": "Marinated chicken breast covered with house-made marinara sauce and topped with fresh mozzarella. Served with roasted baby potatoes and fresh garden vegetables.",
         "ingredients": {
             "chicken breast": "5 oz",
-            "baby backed potatoes": "5 oz",
-            "normandy blend": "0.65 oz",
-            "marinara sauce": "1 oz",
+            "baby baked potatoes": "5 oz",
+            "normandy blend": "5 oz",
+            "marinara sauce": "2 oz",
             "mozzarella cheese": "1 oz",
             "parsley": "0.5 tbsp",
             "olive oil": "0.25 tbsp"
@@ -253,10 +316,10 @@
         "category": ["Lunch/Dinner"],
         "ingredients": {
             "pulled pork": "5 oz",
-            "onions": "1 cup chopped",
-            "coriander": "0.15 cup",
-            "rice": "0.5 cup",
-            "beans": "0.5 cup",
+            "onions": "1 cup (chopped)",
+            "cilantro": "0.15 cup",
+            "medium-grain brown rice": "0.5 cup (cooked)",
+            "black beans": "0.5 cup",
             "salt": "0.25 tsp",
             "achiote paste": "0.1 oz"
         }                                                              

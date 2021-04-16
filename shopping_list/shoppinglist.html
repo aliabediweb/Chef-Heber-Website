@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -93,19 +95,19 @@
             display: none;
         }
     </style>
+
 </head>
+
 
 <body>
 
-    <div id="app">
+    <h1>Chef Heber Shopping List</h1>
+    <h3>Upload .xls or .xlsx file:</h3>
 
-        <h1>Chef Heber Shopping List</h1>
-        <h3>Upload .xls or .xlsx file:</h3>
-        <input type="file" id="input" accept=".xlsx">
-        <button onClick="createList()">Create Shopping List</button>
+    <input type="file" id="input" accept=".xlsx">
+    <button onClick="createList()">Create Shopping List</button>
 
     <div id="temp">
-
         <div id="shoppingListContainer"></div>
 
         <!-- <div class="block meals protien">
@@ -262,17 +264,345 @@
                     </div>
             </div>         
         </div> -->
-
         <!-- <button id="meals_btn" onclick="showmeals()">show meals</button> -->
-        <button id="close_btn">close</button>
 
+        <button id="close_btn">close</button>
     </div>     <!-- temp div delete later -->
 
-    </div>
-
-    </div>
 
     <script>
+
+        // store meals and meal info:
+        var mealsObject = {"meals": [
+            {
+                "name": "Buffalo Cauliflower Bites",
+                "pid": 35487,
+                "category": ["?"],
+                "description": "?",
+                "ingredients": {
+                    "forbidden black rice": "0.3 cup (cooked)",
+                    "asparagus": "0.25 cup",
+                    "red cabbage": "0.25 cup (chopped)",
+                    "red bell peppers": "0.25 cup (chopped)",
+                    "cashews": "0.06 cup (whole)",
+                    "nutritional yeast": "1 gram",
+                    "paprika": "0.2 tbsp",
+                    "cauliflower": "1 cup (1 inch pieces)",
+                    "brown rice flour": "0.25 cup",
+                    "buffalo sauce": "1 oz",
+                    "salt": "0.2 tsp"
+                }                                                             
+            },
+            {
+                "name": "Sriracha Chickpea Buddha Bowl",
+                "pid": 34450,
+                "category": ["Plant-Based"],
+                "description": "?",
+                "ingredients": {
+                    "hot sauce": "1 tsp",
+                    "garbanzo beans": "0.5 cup",
+                    "spinach": "2 cups",
+                    "quinoa": "1 cup",
+                    "red cabbage": "0.25 cup (chopped)",
+                    "grape tomatoes": "75 grams",
+                    "cucumbers": "0.25 cup (chopped)",
+                    "red bell peppers": "0.25 cup (chopped)",
+                    "cashews": "0.15 cup (whole)",
+                    "white vinegar": "1 tbsp",
+                    "nutritional yeast": "1 gram",
+                    "Italian seasoning mix": "0.0625 oz",
+                    "Kosher Salt":	"0.3 tsp"
+                }                                                             
+            },
+            {
+                "name": "Vegan Swedish Meatballs",
+                "pid": 34476,
+                "category": ["Plan-Based"],
+                "description": "?",
+                "ingredients": {
+                    "meatless meatballs": "4 oz",
+                    "russet potatoes": "0.8 cup (diced)",
+                    "cashews": "0.15 cup (whole)",
+                    "normandy blend": "1 cup",
+                    "salt": "0.05 tsp",
+                    "soy sauce": "1 tbsp"
+                }                                                             
+            },
+            {
+                "name": "Thai-Peanut Tofu",
+                "pid": 36180,
+                "category": ["Plan-Based"],
+                "description": "?",
+                "ingredients": {
+                    "tofu (firm)": "5 oz",
+                    "quinoa": "1 cup (cooked)",
+                    "carrots": "0.5 cup (chopped)",
+                    "red cabbage": "0.5 cup (chopped)",
+                    "sweet chili sauce": "2 tbsp",
+                    "peanut butter": "1 tbsp",
+                    "peanuts (dry-roasted)": "0.1 oz",
+                    "edamame (shelled)": "0.15 cup",
+                    "coconut aminos": "0.5 tsp",
+                    "coconut milk":	"0.25 oz"
+                }                                                             
+            },
+            {
+                "name": "Salsa Verde Chicken",
+                "pid": 34699,
+                "category": ["?"],
+                "description": "?",
+                "ingredients": {
+                    "chicken breast": "5 oz",
+                    "salsa verde": "1.5 oz",
+                    "long-grain brown rice": "0.5 cup (cooked)",
+                    "sweet yellow corn": "0.06 cup",
+                    "paprika": "0.2 tbsp",
+                    "black beans": "0.5 cup",
+                    "cheddar cheese": "0.06 cup (shredded)",
+                    "salt": "0.2 tsp",
+                    "red onion (pickled)": "2 tbsp",
+                    "heavy whipping cream": "0.001 fl-oz"
+                }                                                             
+            },
+            {
+                "name": "Vegan Jackfruit + Southwest Rice",
+                "pid": 34693,
+                "category": ["Vegan"],
+                "description": "?",
+                "ingredients": {
+                    "long-grain brown rice": "1 cup (cooked)",
+                    "sweet yellow corn": "0.25 cup",
+                    "coriander (cilantro)": "0.25 cup",
+                    "red bell peppers": "0.25 cup (chopped)",
+                    "Organic young jackfruit": "0.5 cup",
+                    "cashews": "0.15 cup",
+                    "nutritional yeast": "1 gram",
+                    "garlic powder": "0.1 tsp",
+                    "pico de gallo": "2 tbsp",
+                    "abodo seasoning": "0.25 tsp",
+                    "salt": "0.1 tsp",
+                    "BBQ sauce": "4 tbsp"
+                }                                                             
+            },
+            {
+                "name": "Vegan Jackfruit Mexican Pibil Style",
+                "pid": 37009,
+                "category": ["Plan-Based"],
+                "description": "?",
+                "ingredients": {
+                    "Organic young jackfruit": "0.5 cup",
+                    "achiote": "0.15 oz",
+                    "orange juice": "1 fl-oz",
+                    "long-grain brown rice": "1 cup (cooked)",
+                    "sweet yellow corn": "0.25 cup",
+                    "black beans": "0.5 cup",
+                    "red onion": "0.15 cup (sliced)"
+                }                                                             
+            },
+            {
+                "name": "Mushroom & Lentil Ragu Pasta",
+                "pid": 35643,
+                "category": ["?"],
+                "description": "?",
+                "ingredients": {
+                    "Organic black bean and sesame fettuccine": "2 oz",
+                    "lentils": "0.25 cup",
+                    "tomatoes (canned, crushed)": "1 gram",
+                    "kale": "1 cup (chopped)",
+                    "nutritional yeast": "1 gram",
+                    "white mushrooms": "1 cup",
+                    "cashews": "0.16 cup" ,
+                    "turmeric powder": "1 tsp",
+                    "salt": "0.2 tsp"
+                }                                                             
+            },
+            {
+                "name": "Chipotle Chicken w/ Southwest Quinoa",
+                "pid": 36730,
+                "category": ["?"],
+                "description": "?",
+                "ingredients": {
+                    "chicken breast": "5 oz",
+                    "quinoa": "1 cup",
+                    "black beans": "0.5 cup",
+                    "sweet yellow corn": "0.25 cup",
+                    "red bell peppers": "0.25 cup (chopped)",
+                    "red cabbage": "0.25 cup (chopped)",
+                    "pico de gallo": "2 tbsp",
+                    "chipotle peppers in abodo sauce": "0.25 oz",
+                    "cashews": "0.5 oz",
+                    "salt": "1 tsp"
+                }                                                             
+            },
+            {
+                "name": "Garlic-Herbed Roasted Salmon",
+                "pid": 36173,
+                "category": ["?"],
+                "description": "?",
+                "ingredients": {
+                    "salmon": "6 oz",
+                    "long-grain brown rice": "1 cup (cooked)",
+                    "asparagus": "0.5 cup",
+                    "almonds": "0.1 oz",
+                    "dried cranberries": "0.025 cup",
+                    "parsley": "1 tbsp",
+                    "olive oil": "1 tbsp",
+                    "garlic (minced)": "1 tsp",
+                    "turmeric powder": "0.25 tsp",
+                    "lemon juice": "0.05 oz",
+                    "salt": ".2 tsp"
+                }                                                             
+            },
+            {
+                "name": "KETO Mozzarella Chicken w/Marinara",
+                "pid": 37004,
+                "category": ["Keto"],
+                "description": "4 large eggs omelette mixed with sautéed mushrooms, bell pepper, spinach and cheese.",
+                "ingredients": {
+                    "chicken breast": "5 oz",
+                    "marinara sauce": "2 oz",
+                    "mozzarella cheese": "1 oz",
+                    "parsley": "0.5 tbsp",
+                    "olive oil": "0.25 tbsp",
+                    "bacon": "1 slice",
+                    "broccoli":	"0.5 cup (chopped)"
+                }                                                             
+            },
+            {
+                "name": "KETO Mediterranean Omelette",
+                "pid": 37005,
+                "category": ["Keto"],
+                "description": "4 large eggs omelette mixed with sautéed mushrooms, bell pepper, spinach and cheese.",
+                "ingredients": {
+                    "eggs": "4 (large)",
+                    "spinach": "0.33 cup",
+                    "red bell peppers": "0.15 cup (chopped)",
+                    "bacon": "0.5 slice",
+                    "salsa": "2 oz",
+                    "salt": "0.2 tsp"
+                }                                                             
+            },
+            {
+                "name": "KETO Pulled Pork Mexican Pibil Style",
+                "pid": 37008,
+                "category": ["Keto"],
+                "description": "?",
+                "ingredients": {
+                    "pork": "5 oz",
+                    "onions": "0.1 cup (chopped)",
+                    "salt":	"0.25 tsp",
+                    "achiote paste": "0.05 oz",
+                    "bacon": "0.5 slice",
+                    "broccoli":	"1 cup (chopped)"
+                }                                                             
+            },
+            {
+                "name": "KETO Thai-Peanut Chicken",
+                "pid": 36179,
+                "category": ["Keto"],
+                "description": "Marinated chicken breast, served with fresh carrots, red cabbage and topped with thai-peanut sauce and green onions.",
+                "ingredients": {
+                    "chicken breast": "6 oz",
+                    "sweet chili sauce": "2 tbsp",
+                    "red cabbage": "0.33 cup (chopped)",
+                    "carrots": "0.5 cup (chopped)",
+                    "green onions": "1 tbsp",
+                    "peanuts (dry-roasted)": "1 oz",
+                    "peanut butter": "0.5 tbsp",
+                    "coconut milk": "1 oz",
+                    "coconut aminos": "0.5 tsp",
+                    "bacon": "1 slice"
+                }                                                             
+            },
+            {
+                "name": "Sweet Potato Mole Enchiladas",
+                "pid": 34918,
+                "category": ["?"],
+                "description": "?",
+                "ingredients": {
+                    "sweet potato": "0.75 cup",
+                    "torillas": "56 grams",
+                    "medium-grain brown rice": "0.5 cup (cooked)",
+                    "black beans": "0.5 cup",
+                    "tomatoes (roma)": "0.15 cup",
+                    "red onions": "1 cup (sliced)",
+                    "coriander (cilantro)": "0.025 cup",
+                    "mole poblano sauce": "0.5 oz",
+                    "salt": "0.2 tsp",
+                    "lime juice": "0.5 fl-oz"
+                }                                                             
+            },
+            {
+                "name": "Lemon Garlic Tilapia",
+                "pid": 34469,
+                "category": ["Lunch/Dinner"],
+                "description": "Oven-baked tilapia filet served with wild rice pilaf, creamy lime-garlic sauce (creamed with cashews) and garden vegetables.",
+                "ingredients": {
+                    "tilapia": "5 oz",
+                    "normandy blend": "0.65 cup",
+                    "red cabbage": "0.15 cup (chopped)",
+                    "parsley": "1 tbsp",
+                    "garlic": "1 clove",
+                    "lemon juice": "0.5 oz",
+                    "salt": "0.2 tsp",
+                    "wild rice": "0.5 cup",
+                    "olive oil": "1 tbsp",
+                    "cashews": "0.25 oz",
+                    "long-grain brown rice": "0.5 cup (cooked)"
+                }                                                             
+            },
+            {
+                "name": "Thai-Peanut Chicken",
+                "pid": 36178,
+                "category": ["Lunch/Dinner"],
+                "description": "Marinated chicken breast, served with quinoa pilaf, fresh carrots, red cabbage and topped with thai-peanut sauce and green onions.",
+                "ingredients": {
+                    "chicken breast": "5 oz",
+                    "sweet chili sauce": "2 tbsp",
+                    "quinoa": "1 cup (cooked)",
+                    "red cabbage": "0.5 cup (chopped)",
+                    "carrots": "0.5 cup (chopped)",
+                    "green onions": "1 tbsp",
+                    "peanuts (dry-roasted)": "0.1 oz",
+                    "peanut butter": "0.5 tbsp",
+                    "coconut milk": "0.25 oz",
+                    "coconut aminos": "1 tsp"
+                }                                                              
+            },
+            {
+                "name": "Mozzarella Chicken w/ Marinara",
+                "pid": 37003,
+                "category": ["Lunch/Dinner"],
+                "description": "Marinated chicken breast covered with house-made marinara sauce and topped with fresh mozzarella. Served with roasted baby potatoes and fresh garden vegetables.",
+                "ingredients": {
+                    "chicken breast": "5 oz",
+                    "baby baked potatoes": "5 oz",
+                    "normandy blend": "5 oz",
+                    "marinara sauce": "2 oz",
+                    "mozzarella cheese": "1 oz",
+                    "parsley": "0.5 tbsp",
+                    "olive oil": "0.25 tbsp"
+                }                                                              
+            },
+            {
+                "name": "Pulled Pork Mexican Pibil Style",
+                "pid": 37006,
+                "description": "Slow cooked pork shoulder marinated with Mexican spices, topped with escabeche onions. Served with cilantro-lime rice and black refried beans.",
+                "category": ["Lunch/Dinner"],
+                "ingredients": {
+                    "pulled pork": "5 oz",
+                    "onions": "1 cup (chopped)",
+                    "cilantro": "0.15 cup",
+                    "medium-grain brown rice": "0.5 cup (cooked)",
+                    "black beans": "0.5 cup",
+                    "salt": "0.25 tsp",
+                    "achiote paste": "0.1 oz"
+                }                                                              
+            },
+        ]}
+
+
+        // handle input:    
         var input = document.getElementById('input');
 
         function handleFile(e) {
@@ -292,7 +622,7 @@
                 for (i = 7; i < 24; i++) {
                     // add values '7'-'25' to both arrays:
                     mealNameCells.push("A"+i);
-                    mealTotalCells.push("G"+i);
+                    mealTotalCells.push("E"+i);
                 }
                 // initialize object to store arrays:
                 var mealNamesTotals = {
@@ -325,6 +655,7 @@
                     var mealTotalCellValue = (mealTotalCell ? mealTotalCell.v : undefined);
                     // push cell value to mealTotals array (in mealNamesTotals object): 
                     mealNamesTotals.mealTotals.push(mealTotalCellValue);
+                    console.log();
                 }
                 // view arrays in object:
                 console.log(mealNamesTotals.mealNames);
@@ -336,6 +667,8 @@
         
         input.addEventListener('change', handleFile, false);
 
+
+        // store all ingredients by category:
         var shoppingListMain = {"items": [
             {
                 "header": "Protiens",
@@ -359,6 +692,8 @@
             },
         ]};
 
+
+        // display shopping list"
         var shoppingListContainerNode = document.getElementById("shoppingListContainer");
         // block content:
         var content = "";
@@ -398,16 +733,9 @@
             // append content to block:
             shoppingListContainerNode.innerHTML = content;
         }
-        document.addEventListener('DOMContentLoaded',()=>{
-            fetch('meals.json').then(res=>res.json()).then(data=>{
-                console.log(data);
-            })
-        })
 
 
-    </script>
-    
-    <script>
+        // temp:
         toggleMeals = false;
         mealsBtnNode = document.getElementById('meals_btn');
         mealsNode = document.getElementsByClassName('meals');
@@ -436,24 +764,10 @@
                 }
             }
         }
+
     </script>
-    <script>
-        var meal1 = {
-            name: "chicken w/ rice",
-            pid: 44192,
-            ingredients: [
-                "chicken",
-                "rice",
-                "veg1",
-                "veg2"
-            ],
-            ingAmt: [
-                5,
-                2,
-                1,
-                1
-            ]
-        };
-    </script>
+
 </body>
+
+
 </html>
