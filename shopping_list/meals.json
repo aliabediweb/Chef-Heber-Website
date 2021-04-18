@@ -5,7 +5,7 @@
         "category": ["?"],
         "description": "?",
         "ingredients": {
-            "forbidden black rice": "0.3 cup (cooked)",
+            "black rice": "0.3 cup (cooked)",
             "asparagus": "0.25 cup",
             "red cabbage": "0.25 cup (chopped)",
             "red bell peppers": "0.25 cup (chopped)",
@@ -36,7 +36,7 @@
             "white vinegar": "1 tbsp",
             "nutritional yeast": "1 gram",
             "Italian seasoning mix": "0.0625 oz",
-            "Kosher Salt":	"0.3 tsp"
+            "salt":	"0.3 tsp"
         }                                                             
     },
     {
@@ -66,7 +66,7 @@
             "sweet chili sauce": "2 tbsp",
             "peanut butter": "1 tbsp",
             "peanuts (dry-roasted)": "0.1 oz",
-            "edamame (shelled)": "0.15 cup",
+            "edamame": "0.15 cup",
             "coconut aminos": "0.5 tsp",
             "coconut milk":	"0.25 oz"
         }                                                             
@@ -85,7 +85,7 @@
             "black beans": "0.5 cup",
             "cheddar cheese": "0.06 cup (shredded)",
             "salt": "0.2 tsp",
-            "red onion (pickled)": "2 tbsp",
+            "red onions (pickled)": "2 tbsp",
             "heavy whipping cream": "0.001 fl-oz"
         }                                                             
     },
@@ -97,9 +97,9 @@
         "ingredients": {
             "long-grain brown rice": "1 cup (cooked)",
             "sweet yellow corn": "0.25 cup",
-            "coriander (cilantro)": "0.25 cup",
+            "cilantro": "0.25 cup",
             "red bell peppers": "0.25 cup (chopped)",
-            "Organic young jackfruit": "0.5 cup",
+            "jackfruit": "0.5 cup",
             "cashews": "0.15 cup",
             "nutritional yeast": "1 gram",
             "garlic powder": "0.1 tsp",
@@ -115,13 +115,13 @@
         "category": ["Plan-Based"],
         "description": "?",
         "ingredients": {
-            "Organic young jackfruit": "0.5 cup",
+            "jackfruit": "0.5 cup",
             "achiote": "0.15 oz",
             "orange juice": "1 fl-oz",
             "long-grain brown rice": "1 cup (cooked)",
             "sweet yellow corn": "0.25 cup",
             "black beans": "0.5 cup",
-            "red onion": "0.15 cup (sliced)"
+            "red onions": "0.15 cup (sliced)"
         }                                                             
     },
     {
@@ -130,9 +130,9 @@
         "category": ["?"],
         "description": "?",
         "ingredients": {
-            "Organic black bean and sesame fettuccine": "2 oz",
+            "black bean and sesame fettuccine": "2 oz",
             "lentils": "0.25 cup",
-            "tomatoes (canned, crushed)": "1 gram",
+            "tomatoes (canned)": "1 gram",
             "kale": "1 cup (chopped)",
             "nutritional yeast": "1 gram",
             "white mushrooms": "1 cup",
@@ -245,13 +245,13 @@
         "category": ["?"],
         "description": "?",
         "ingredients": {
-            "sweet potato": "0.75 cup",
+            "sweet potatoes": "0.75 cup",
             "torillas": "56 grams",
             "medium-grain brown rice": "0.5 cup (cooked)",
             "black beans": "0.5 cup",
             "tomatoes (roma)": "0.15 cup",
             "red onions": "1 cup (sliced)",
-            "coriander (cilantro)": "0.025 cup",
+            "cilantro": "0.025 cup",
             "mole poblano sauce": "0.5 oz",
             "salt": "0.2 tsp",
             "lime juice": "0.5 fl-oz"

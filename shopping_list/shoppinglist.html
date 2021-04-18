@@ -12,7 +12,7 @@
         body {
             margin-top: 50px;
             text-align: center;
-            padding: 0px 30px;
+            padding: 0 10px;
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
             background-color: lightsteelblue;
         }
@@ -40,22 +40,10 @@
             /* background-color: lime; */
             color: #555;
         }
-        button {
-            display: block;
-            width: 80%;
-            margin: 50px auto 100px;
-            /* background-color: lime; */
-            height: 50px;
-            font-size: 25px;
-            border: none;
-            border-radius: 5px;
-        }
-        .block, .block2 {
+        .block2 {
             margin: 15px;
             padding: 15px;
             border-radius: 10px;
-        }
-        .block2 {
             background-color: lightgreen;
         }
         .col3 {
@@ -63,8 +51,9 @@
             flex-direction: row;
         }
         .row {
+            width: 33%;
             flex-grow: 1;
-            margin: 20px 5px;
+            margin: 0 3px;
         }
         ul {
             margin: 0;
@@ -77,22 +66,13 @@
             margin: 5px 0;
             padding: 0;
         }
-        .meals {
-            display: none;
-        }
-        .protien {
-            background-color: lightsalmon;
-        }
-        #meals_btn {
-            background-color: gray;
-            color: white;
-        }
-        #close_btn {
-            background-color: rgba(255, 0, 0, 0.5);
-            color: white;
-        }
-        #temp {
-            display: none;
+        @media only screen and (max-width: 750px) {
+            body {
+                padding: 0 5px;
+            }
+            li {
+               font-size: 10px;
+            }
         }
     </style>
 
@@ -102,172 +82,11 @@
 <body>
 
     <h1>Chef Heber Shopping List</h1>
-    <h3>Upload .xls or .xlsx file:</h3>
+    <h3 id="info">Upload .xls or .xlsx file:</h3>
 
     <input type="file" id="input" accept=".xlsx">
-    <button onClick="createList()">Create Shopping List</button>
+    <div id="shoppingListContainer"></div>
 
-    <div id="temp">
-        <div id="shoppingListContainer"></div>
-
-        <!-- <div class="block meals protien">
-            <h5>Beef Bourguignon</h5>
-            <p>Total Orders: 90</p>
-            <div class="col3">
-                    <div class="row">
-                        <ul>
-                            <li>mashed potatoes</li>
-                            <li>heavy cream</li>
-                            <li>butter</li>
-                            <li>mushrooms</li>
-                        </ul>
-                    </div>
-                    <div class="row">
-                        <ul>
-                            <li>1 cup</li>
-                            <li>2 oz</li>
-                            <li>1 oz</li>
-                            <li>0.5 cup</li>
-                        </ul>
-                    </div>
-                    <div class="row">
-                        <ul>
-                            <li>1 * 90 = 90 cups</li>
-                            <li>180 oz</li>
-                            <li>90 oz</li>
-                            <li>45 cups</li>
-                        </ul>
-                    </div>
-            </div>         
-        </div>
-
-        <div class="block meals protien">
-            <h5>Chicken w/Mexican Mole</h5>
-            <p>Total Orders: 100</p>
-            <div class="col3">
-                    <div class="row">
-                        <ul>
-                            <li>chicken breast</li>
-                            <li>mole</li>
-                            <li>cilantro-lime rice</li>
-                            <li>black beans</li>
-                        </ul>
-                    </div>
-                    <div class="row">
-                        <ul>
-                            <li>5 oz</li>
-                            <li>2 oz</li>
-                            <li>1 cup</li>
-                            <li>0.5 cup</li>
-                        </ul>
-                    </div>
-                    <div class="row">
-                        <ul>
-                            <li>500 oz</li>
-                            <li>200 oz</li>
-                            <li>100 cups</li>
-                            <li>50 cups</li>
-                        </ul>
-                    </div>
-            </div>         
-        </div>
-
-        <div class="block meals protien">
-            <h5>Chipotle Ranch Chicken</h5>
-            <p>Total Orders: 100</p>
-            <div class="col3">
-                    <div class="row">
-                        <ul>
-                            <li>chicken breast</li>
-                            <li>mole</li>
-                            <li>cilantro-lime rice</li>
-                            <li>black beans</li>
-                        </ul>
-                    </div>
-                    <div class="row">
-                        <ul>
-                            <li>5 oz</li>
-                            <li>2 oz</li>
-                            <li>1 cup</li>
-                            <li>0.5 cup</li>
-                        </ul>
-                    </div>
-                    <div class="row">
-                        <ul>
-                            <li>500 oz</li>
-                            <li>200 oz</li>
-                            <li>100 cups</li>
-                            <li>50 cups</li>
-                        </ul>
-                    </div>
-            </div>         
-        </div>
-
-        <div class="block meals protien">
-            <h5>Garlic Herbed Salmon</h5>
-            <p>Total Orders: 100</p>
-            <div class="col3">
-                    <div class="row">
-                        <ul>
-                            <li>chicken breast</li>
-                            <li>mole</li>
-                            <li>cilantro-lime rice</li>
-                            <li>black beans</li>
-                        </ul>
-                    </div>
-                    <div class="row">
-                        <ul>
-                            <li>5 oz</li>
-                            <li>2 oz</li>
-                            <li>1 cup</li>
-                            <li>0.5 cup</li>
-                        </ul>
-                    </div>
-                    <div class="row">
-                        <ul>
-                            <li>500 oz</li>
-                            <li>200 oz</li>
-                            <li>100 cups</li>
-                            <li>50 cups</li>
-                        </ul>
-                    </div>
-            </div>         
-        </div>
-
-        <div class="block meals protien">
-            <h5>Thai Peanut Chicken</h5>
-            <p>Total Orders: 100</p>
-            <div class="col3">
-                    <div class="row">
-                        <ul>
-                            <li>chicken breast</li>
-                            <li>mole</li>
-                            <li>cilantro-lime rice</li>
-                            <li>black beans</li>
-                        </ul>
-                    </div>
-                    <div class="row">
-                        <ul>
-                            <li>5 oz</li>
-                            <li>2 oz</li>
-                            <li>1 cup</li>
-                            <li>0.5 cup</li>
-                        </ul>
-                    </div>
-                    <div class="row">
-                        <ul>
-                            <li>500 oz</li>
-                            <li>200 oz</li>
-                            <li>100 cups</li>
-                            <li>50 cups</li>
-                        </ul>
-                    </div>
-            </div>         
-        </div> -->
-        <!-- <button id="meals_btn" onclick="showmeals()">show meals</button> -->
-
-        <button id="close_btn">close</button>
-    </div>     <!-- temp div delete later -->
 
 
     <script>
@@ -280,139 +99,16 @@
                 "category": ["?"],
                 "description": "?",
                 "ingredients": {
-                    "forbidden black rice": "0.3 cup (cooked)",
+                    "black rice": "0.3 cup (cooked)",
                     "asparagus": "0.25 cup",
                     "red cabbage": "0.25 cup (chopped)",
                     "red bell peppers": "0.25 cup (chopped)",
                     "cashews": "0.06 cup (whole)",
                     "nutritional yeast": "1 gram",
                     "paprika": "0.2 tbsp",
-                    "cauliflower": "1 cup (1 inch pieces)",
+                    "cauliflower": "1 cup (pieces)",
                     "brown rice flour": "0.25 cup",
                     "buffalo sauce": "1 oz",
-                    "salt": "0.2 tsp"
-                }                                                             
-            },
-            {
-                "name": "Sriracha Chickpea Buddha Bowl",
-                "pid": 34450,
-                "category": ["Plant-Based"],
-                "description": "?",
-                "ingredients": {
-                    "hot sauce": "1 tsp",
-                    "garbanzo beans": "0.5 cup",
-                    "spinach": "2 cups",
-                    "quinoa": "1 cup",
-                    "red cabbage": "0.25 cup (chopped)",
-                    "grape tomatoes": "75 grams",
-                    "cucumbers": "0.25 cup (chopped)",
-                    "red bell peppers": "0.25 cup (chopped)",
-                    "cashews": "0.15 cup (whole)",
-                    "white vinegar": "1 tbsp",
-                    "nutritional yeast": "1 gram",
-                    "Italian seasoning mix": "0.0625 oz",
-                    "Kosher Salt":	"0.3 tsp"
-                }                                                             
-            },
-            {
-                "name": "Vegan Swedish Meatballs",
-                "pid": 34476,
-                "category": ["Plan-Based"],
-                "description": "?",
-                "ingredients": {
-                    "meatless meatballs": "4 oz",
-                    "russet potatoes": "0.8 cup (diced)",
-                    "cashews": "0.15 cup (whole)",
-                    "normandy blend": "1 cup",
-                    "salt": "0.05 tsp",
-                    "soy sauce": "1 tbsp"
-                }                                                             
-            },
-            {
-                "name": "Thai-Peanut Tofu",
-                "pid": 36180,
-                "category": ["Plan-Based"],
-                "description": "?",
-                "ingredients": {
-                    "tofu (firm)": "5 oz",
-                    "quinoa": "1 cup (cooked)",
-                    "carrots": "0.5 cup (chopped)",
-                    "red cabbage": "0.5 cup (chopped)",
-                    "sweet chili sauce": "2 tbsp",
-                    "peanut butter": "1 tbsp",
-                    "peanuts (dry-roasted)": "0.1 oz",
-                    "edamame (shelled)": "0.15 cup",
-                    "coconut aminos": "0.5 tsp",
-                    "coconut milk":	"0.25 oz"
-                }                                                             
-            },
-            {
-                "name": "Salsa Verde Chicken",
-                "pid": 34699,
-                "category": ["?"],
-                "description": "?",
-                "ingredients": {
-                    "chicken breast": "5 oz",
-                    "salsa verde": "1.5 oz",
-                    "long-grain brown rice": "0.5 cup (cooked)",
-                    "sweet yellow corn": "0.06 cup",
-                    "paprika": "0.2 tbsp",
-                    "black beans": "0.5 cup",
-                    "cheddar cheese": "0.06 cup (shredded)",
-                    "salt": "0.2 tsp",
-                    "red onion (pickled)": "2 tbsp",
-                    "heavy whipping cream": "0.001 fl-oz"
-                }                                                             
-            },
-            {
-                "name": "Vegan Jackfruit + Southwest Rice",
-                "pid": 34693,
-                "category": ["Vegan"],
-                "description": "?",
-                "ingredients": {
-                    "long-grain brown rice": "1 cup (cooked)",
-                    "sweet yellow corn": "0.25 cup",
-                    "coriander (cilantro)": "0.25 cup",
-                    "red bell peppers": "0.25 cup (chopped)",
-                    "Organic young jackfruit": "0.5 cup",
-                    "cashews": "0.15 cup",
-                    "nutritional yeast": "1 gram",
-                    "garlic powder": "0.1 tsp",
-                    "pico de gallo": "2 tbsp",
-                    "abodo seasoning": "0.25 tsp",
-                    "salt": "0.1 tsp",
-                    "BBQ sauce": "4 tbsp"
-                }                                                             
-            },
-            {
-                "name": "Vegan Jackfruit Mexican Pibil Style",
-                "pid": 37009,
-                "category": ["Plan-Based"],
-                "description": "?",
-                "ingredients": {
-                    "Organic young jackfruit": "0.5 cup",
-                    "achiote": "0.15 oz",
-                    "orange juice": "1 fl-oz",
-                    "long-grain brown rice": "1 cup (cooked)",
-                    "sweet yellow corn": "0.25 cup",
-                    "black beans": "0.5 cup",
-                    "red onion": "0.15 cup (sliced)"
-                }                                                             
-            },
-            {
-                "name": "Mushroom & Lentil Ragu Pasta",
-                "pid": 35643,
-                "category": ["?"],
-                "description": "?",
-                "ingredients": {
-                    "Organic black bean and sesame fettuccine": "2 oz",
-                    "lentils": "0.25 cup",
-                    "tomatoes (canned, crushed)": "1 gram",
-                    "kale": "1 cup (chopped)",
-                    "nutritional yeast": "1 gram",
-                    "white mushrooms": "1 cup",
-                    "cashews": "0.16 cup" ,
-                    "turmeric powder": "1 tsp",
                     "salt": "0.2 tsp"
                 }                                                             
             },
@@ -454,21 +150,6 @@
                 }                                                             
             },
             {
-                "name": "KETO Mozzarella Chicken w/Marinara",
-                "pid": 37004,
-                "category": ["Keto"],
-                "description": "4 large eggs omelette mixed with sautéed mushrooms, bell pepper, spinach and cheese.",
-                "ingredients": {
-                    "chicken breast": "5 oz",
-                    "marinara sauce": "2 oz",
-                    "mozzarella cheese": "1 oz",
-                    "parsley": "0.5 tbsp",
-                    "olive oil": "0.25 tbsp",
-                    "bacon": "1 slice",
-                    "broccoli":	"0.5 cup (chopped)"
-                }                                                             
-            },
-            {
                 "name": "KETO Mediterranean Omelette",
                 "pid": 37005,
                 "category": ["Keto"],
@@ -480,20 +161,6 @@
                     "bacon": "0.5 slice",
                     "salsa": "2 oz",
                     "salt": "0.2 tsp"
-                }                                                             
-            },
-            {
-                "name": "KETO Pulled Pork Mexican Pibil Style",
-                "pid": 37008,
-                "category": ["Keto"],
-                "description": "?",
-                "ingredients": {
-                    "pork": "5 oz",
-                    "onions": "0.1 cup (chopped)",
-                    "salt":	"0.25 tsp",
-                    "achiote paste": "0.05 oz",
-                    "bacon": "0.5 slice",
-                    "broccoli":	"1 cup (chopped)"
                 }                                                             
             },
             {
@@ -512,24 +179,6 @@
                     "coconut milk": "1 oz",
                     "coconut aminos": "0.5 tsp",
                     "bacon": "1 slice"
-                }                                                             
-            },
-            {
-                "name": "Sweet Potato Mole Enchiladas",
-                "pid": 34918,
-                "category": ["?"],
-                "description": "?",
-                "ingredients": {
-                    "sweet potato": "0.75 cup",
-                    "torillas": "56 grams",
-                    "medium-grain brown rice": "0.5 cup (cooked)",
-                    "black beans": "0.5 cup",
-                    "tomatoes (roma)": "0.15 cup",
-                    "red onions": "1 cup (sliced)",
-                    "coriander (cilantro)": "0.025 cup",
-                    "mole poblano sauce": "0.5 oz",
-                    "salt": "0.2 tsp",
-                    "lime juice": "0.5 fl-oz"
                 }                                                             
             },
             {
@@ -552,6 +201,110 @@
                 }                                                             
             },
             {
+                "name": "Mozzarella Chicken w/ Marinara",
+                "pid": 37003,
+                "category": ["Lunch/Dinner"],
+                "description": "Marinated chicken breast covered with house-made marinara sauce and topped with fresh mozzarella. Served with roasted baby potatoes and fresh garden vegetables.",
+                "ingredients": {
+                    "chicken breast": "5 oz",
+                    "baby baked potatoes": "5 oz",
+                    "normandy blend": "5 oz",
+                    "marinara sauce": "2 oz",
+                    "mozzarella cheese": "1 oz",
+                    "parsley": "0.5 tbsp",
+                    "olive oil": "0.25 tbsp"
+                }                                                              
+            },
+            {
+                "name": "Mushroom & Lentil Ragu Pasta",
+                "pid": 35643,
+                "category": ["?"],
+                "description": "?",
+                "ingredients": {
+                    "Organic black bean and sesame fettuccine": "2 oz",
+                    "lentils": "0.25 cup",
+                    "tomatoes (canned, crushed)": "1 gram",
+                    "kale": "1 cup (chopped)",
+                    "nutritional yeast": "1 gram",
+                    "white mushrooms": "1 cup",
+                    "cashews": "0.16 cup" ,
+                    "turmeric powder": "1 tsp",
+                    "salt": "0.2 tsp"
+                }                                                             
+            },
+            {
+                "name": "Pulled Pork Mexican Pibil Style",
+                "pid": 37006,
+                "description": "Slow cooked pork shoulder marinated with Mexican spices, topped with escabeche onions. Served with cilantro-lime rice and black refried beans.",
+                "category": ["Lunch/Dinner"],
+                "ingredients": {
+                    "pulled pork": "5 oz",
+                    "onions": "1 cup (chopped)",
+                    "cilantro": "0.15 cup",
+                    "medium-grain brown rice": "0.5 cup (cooked)",
+                    "black beans": "0.5 cup",
+                    "salt": "0.25 tsp",
+                    "achiote paste": "0.1 oz"
+                }                                                              
+            },
+            {
+                "name": "Salsa Verde Chicken",
+                "pid": 34699,
+                "category": ["?"],
+                "description": "?",
+                "ingredients": {
+                    "chicken breast": "5 oz",
+                    "salsa verde": "1.5 oz",
+                    "long-grain brown rice": "0.5 cup (cooked)",
+                    "sweet yellow corn": "0.06 cup",
+                    "paprika": "0.2 tbsp",
+                    "black beans": "0.5 cup",
+                    "cheddar cheese": "0.06 cup (shredded)",
+                    "salt": "0.2 tsp",
+                    "red onion (pickled)": "2 tbsp",
+                    "heavy whipping cream": "0.001 fl-oz"
+                }                                                             
+            },
+            {
+                "name": "Sriracha Chickpea Buddha Bowl",
+                "pid": 34450,
+                "category": ["Plant-Based"],
+                "description": "?",
+                "ingredients": {
+                    "hot sauce": "1 tsp",
+                    "garbanzo beans": "0.5 cup",
+                    "spinach": "2 cups",
+                    "quinoa": "1 cup",
+                    "red cabbage": "0.25 cup (chopped)",
+                    "grape tomatoes": "75 grams",
+                    "cucumbers": "0.25 cup (chopped)",
+                    "red bell peppers": "0.25 cup (chopped)",
+                    "cashews": "0.15 cup (whole)",
+                    "white vinegar": "1 tbsp",
+                    "nutritional yeast": "1 gram",
+                    "Italian seasoning mix": "0.0625 oz",
+                    "Kosher Salt":	"0.3 tsp"
+                }                                                             
+            },
+            {
+                "name": "Sweet Potato Mole Enchiladas",
+                "pid": 34918,
+                "category": ["?"],
+                "description": "?",
+                "ingredients": {
+                    "sweet potato": "0.75 cup",
+                    "torillas": "56 grams",
+                    "medium-grain brown rice": "0.5 cup (cooked)",
+                    "black beans": "0.5 cup",
+                    "tomatoes (roma)": "0.15 cup",
+                    "red onions": "1 cup (sliced)",
+                    "cilantro": "0.025 cup",
+                    "mole poblano sauce": "0.5 oz",
+                    "salt": "0.2 tsp",
+                    "lime juice": "0.5 fl-oz"
+                }                                                             
+            },
+            {
                 "name": "Thai-Peanut Chicken",
                 "pid": 36178,
                 "category": ["Lunch/Dinner"],
@@ -570,40 +323,203 @@
                 }                                                              
             },
             {
-                "name": "Mozzarella Chicken w/ Marinara",
-                "pid": 37003,
-                "category": ["Lunch/Dinner"],
-                "description": "Marinated chicken breast covered with house-made marinara sauce and topped with fresh mozzarella. Served with roasted baby potatoes and fresh garden vegetables.",
+                "name": "Thai-Peanut Tofu",
+                "pid": 36180,
+                "category": ["Plan-Based"],
+                "description": "?",
                 "ingredients": {
-                    "chicken breast": "5 oz",
-                    "baby baked potatoes": "5 oz",
-                    "normandy blend": "5 oz",
-                    "marinara sauce": "2 oz",
-                    "mozzarella cheese": "1 oz",
-                    "parsley": "0.5 tbsp",
-                    "olive oil": "0.25 tbsp"
-                }                                                              
+                    "tofu (firm)": "5 oz",
+                    "quinoa": "1 cup (cooked)",
+                    "carrots": "0.5 cup (chopped)",
+                    "red cabbage": "0.5 cup (chopped)",
+                    "sweet chili sauce": "2 tbsp",
+                    "peanut butter": "1 tbsp",
+                    "peanuts (dry-roasted)": "0.1 oz",
+                    "edamame (shelled)": "0.15 cup",
+                    "coconut aminos": "0.5 tsp",
+                    "coconut milk":	"0.25 oz"
+                }                                                             
             },
             {
-                "name": "Pulled Pork Mexican Pibil Style",
-                "pid": 37006,
-                "description": "Slow cooked pork shoulder marinated with Mexican spices, topped with escabeche onions. Served with cilantro-lime rice and black refried beans.",
-                "category": ["Lunch/Dinner"],
+                "name": "Vegan Jackfruit Mexican Pibil Style",
+                "pid": 37009,
+                "category": ["Plan-Based"],
+                "description": "?",
                 "ingredients": {
-                    "pulled pork": "5 oz",
-                    "onions": "1 cup (chopped)",
-                    "cilantro": "0.15 cup",
-                    "medium-grain brown rice": "0.5 cup (cooked)",
+                    "Organic young jackfruit": "0.5 cup",
+                    "achiote": "0.15 oz",
+                    "orange juice": "1 fl-oz",
+                    "long-grain brown rice": "1 cup (cooked)",
+                    "sweet yellow corn": "0.25 cup",
                     "black beans": "0.5 cup",
-                    "salt": "0.25 tsp",
-                    "achiote paste": "0.1 oz"
-                }                                                              
+                    "red onion": "0.15 cup (sliced)"
+                }                                                             
+            },
+            {
+                "name": "Vegan Jackfruit + Southwest Rice",
+                "pid": 34693,
+                "category": ["Vegan"],
+                "description": "?",
+                "ingredients": {
+                    "long-grain brown rice": "1 cup (cooked)",
+                    "sweet yellow corn": "0.25 cup",
+                    "cilantro": "0.25 cup",
+                    "red bell peppers": "0.25 cup (chopped)",
+                    "Organic young jackfruit": "0.5 cup",
+                    "cashews": "0.15 cup",
+                    "nutritional yeast": "1 gram",
+                    "garlic powder": "0.1 tsp",
+                    "pico de gallo": "2 tbsp",
+                    "abodo seasoning": "0.25 tsp",
+                    "salt": "0.1 tsp",
+                    "BBQ sauce": "4 tbsp"
+                }                                                             
+            },
+            {
+                "name": "Vegan Swedish Meatballs",
+                "pid": 34476,
+                "category": ["Plan-Based"],
+                "description": "?",
+                "ingredients": {
+                    "meatless meatballs": "4 oz",
+                    "russet potatoes": "0.8 cup (diced)",
+                    "cashews": "0.15 cup (whole)",
+                    "normandy blend": "1 cup",
+                    "salt": "0.05 tsp",
+                    "soy sauce": "1 tbsp"
+                }                                                             
             },
         ]}
+
+        // store all ingredients by category:
+        var shoppingListMain = {"items": [
+            {
+                "header": "Protiens",
+                "ingredients": [
+                    "chicken breast",
+                    "salmon",
+                    "tilapia",
+                    "tofu (firm)",
+                    "lentils",
+                    "garbanzo beans",
+                    "black beans",
+                    "edamame",
+                    "meatless meatballs",
+                    "pork",
+                    "pulled pork",
+                    "bacon",
+                    "eggs"
+                ],
+            },
+            {
+                "header": "Starches",
+                "ingredients": [
+                    "black rice",
+                    "long-grain brown rice",
+                    "medium-grain brown rice",
+                    "wild rice",
+                    "quinoa",
+                    "black bean and sesame fettuccine",
+                    "torillas",
+                ],
+            },
+            {
+                "header": "Veggies",
+                "ingredients": [
+                    "asparagus",
+                    "broccoli",
+                    "red cabbage",
+                    "red bell peppers",
+                    "red onion",
+                    "cauliflower",
+                    "spinach",
+                    "grape tomatoes",
+                    "cucumbers",
+                    "russet potatoes",
+                    "baby baked potatoes",
+                    "normandy blend",
+                    "carrots",
+                    "spinach",
+                    "sweet yellow corn",
+                    "onions",
+                    "green onions",
+                    "red onions",
+                    "red onions (pickled)",
+                    "parsley",
+                    "cilantro",
+                    "jackfruit",
+                    "tomatoes (roma)",
+                    "tomatoes (canned)",
+                    "white mushrooms",
+                    "kale",
+                    "sweet potatoes",
+                ],
+            },
+            {
+                "header": "Sauces",
+                "ingredients": [
+                    "marinara sauce",
+                    "buffalo sauce",
+                    "hot sauce",
+                    "soy sauce",
+                    "sweet chili sauce",
+                    "mole poblano sauce",
+                    "salsa",
+                    "salsa verde",
+                    "pico de gallo",
+                    "BBQ sauce",
+                    "chipotle peppers in abodo sauce",
+                    "achiote paste",
+                ],
+            },
+            {
+                "header": "Spices",
+                "ingredients": [
+                    "salt",
+                    "paprika",
+                    "garlic",
+                    "garlic (minced)",
+                    "garlic powder",
+                    "turmeric powder",
+                    "Italian seasoning mix",
+                    "abodo seasoning",
+                    "achiote",
+                    "lemon juice",
+                    "lime juice",
+                ],
+            },
+            {
+                "header": "Other",
+                "ingredients": [
+                    "olive oil",
+                    "almonds",
+                    "cashews",
+                    "peanuts (dry-roasted)",
+                    "peanut butter",
+                    "dried cranberries",
+                    "nutritional yeast",
+                    "brown rice flour",
+                    "white vinegar",
+                    "coconut aminos",
+                    "coconut milk",
+                    "mozzarella cheese",
+                    "cheddar cheese",
+                    "heavy whipping cream",
+                    "orange juice",
+                ],
+            },
+        ]};
 
 
         // handle input:    
         var input = document.getElementById('input');
+        var info = document.getElementById('info');
+        // initialize object to store arrays:
+        var mealNamesTotals = {
+            mealNames: [],
+            pids: [],
+            mealTotals: []
+        };
 
         function handleFile(e) {
             var files = e.target.files, f = files[0];
@@ -624,12 +540,6 @@
                     mealNameCells.push("A"+i);
                     mealTotalCells.push("E"+i);
                 }
-                // initialize object to store arrays:
-                var mealNamesTotals = {
-                    mealNames: [],
-                    pids: [],
-                    mealTotals: []
-                };
                 // iterate through cell addresses array to get meal names and meal PID:
                 mealNameCells.forEach(getMealNames);
                 function getMealNames(item, index) {
@@ -641,7 +551,7 @@
                     var pos = mealNameCellValue.indexOf('(');
                     var mealName = mealNameCellValue.slice(0,pos-1)
                     var pid = mealNameCellValue.slice(pos+5,-1)
-                    console.log(mealName + " - " + pid);
+                    // console.log(mealName + " - " + pid);
                     // push cell value to mealNames array (in mealNamesTotals object): 
                     mealNamesTotals.mealNames.push(mealName);
                     mealNamesTotals.pids.push(pid);
@@ -658,9 +568,67 @@
                     console.log();
                 }
                 // view arrays in object:
-                console.log(mealNamesTotals.mealNames);
-                console.log(mealNamesTotals.pids);
-                console.log(mealNamesTotals.mealTotals);
+                // console.log(mealNamesTotals.mealNames);
+                // console.log(mealNamesTotals.pids);
+                // console.log(mealNamesTotals.mealTotals);
+
+            
+                // display shopping list:
+                var shoppingListContainerNode = document.getElementById("shoppingListContainer");
+                // block content:
+                var content = "";
+
+                // create list:
+                for (const meal in mealsObject.meals) {
+                    var header = mealsObject.meals[meal].name;
+                    var mealTotal = mealNamesTotals.mealTotals[meal];
+                    content += "<div class='block2'><h5>" + header + "</h5><h4>Total Orders: " + mealTotal + "</h4>";
+                    content += "<div class='col3'><div class='row'><ul>";
+                    var ingredientsNameArray = Object.keys(mealsObject.meals[meal].ingredients);
+                    ingredientsNameArray.forEach(addIngredient);
+                    function addIngredient(item, index) {
+                        var ingredientName = ingredientsNameArray[index];
+                        content += "<li>" + ingredientsNameArray[index] + "</li>";
+                    } 
+                    content += "</ul></div>";
+                    content += "<div class='row'><ul>";
+                    var ingredientsAmountObject = mealsObject.meals[meal].ingredients;
+                    for (const ingredientValue in ingredientsAmountObject) {
+                        var ingredientAmount = Number(ingredientsAmountObject[ingredientValue].split(' ')[0]);
+                        var ingredientUnit = ingredientsAmountObject[ingredientValue].split(' ')[1]
+                        var ingredientMod = ingredientsAmountObject[ingredientValue].split(' ')[2];
+                        ingredientAmount = parseFloat(ingredientAmount.toFixed(2));
+                        ingredientAmount = ingredientAmount.toString();                        
+                        console.log(ingredientAmount.toString());
+                        content += "<li>" + ingredientAmount + " " + ingredientUnit;
+                        if (ingredientMod != undefined) {
+                            content += " " + ingredientMod + "</li>";
+                        } else {
+                            content += "</li>";
+                        }
+                    }
+                    content += "</ul></div>";
+                    content += "<div class='row'><ul>";
+                    for (const ingredientValue in ingredientsAmountObject) {
+                        var ingredientAmount = Number(ingredientsAmountObject[ingredientValue].split(' ')[0] * mealTotal);
+                        var ingredientUnit = ingredientsAmountObject[ingredientValue].split(' ')[1]
+                        var ingredientMod = ingredientsAmountObject[ingredientValue].split(' ')[2];
+                        ingredientAmount = parseFloat(ingredientAmount.toFixed(2));
+                        ingredientAmount = ingredientAmount.toString();                        
+                        content += "<li>" + ingredientAmount + " " + ingredientUnit;
+                        if (ingredientMod != undefined) {
+                            content += " " + ingredientMod + "</li>";
+                        } else {
+                            content += "</li>";
+                        }
+                    }
+                    content += "</ul></div>";
+                    content += "</div></div>";
+                }
+
+                shoppingListContainerNode.innerHTML = content;
+                input.style.display = "none";
+                info.style.display = "none";
             };
             reader.readAsArrayBuffer(f);
         }
@@ -668,102 +636,43 @@
         input.addEventListener('change', handleFile, false);
 
 
-        // store all ingredients by category:
-        var shoppingListMain = {"items": [
-            {
-                "header": "Protiens",
-                "ingredients": {"beef": 0, "chicken": 0, "salmon": 0, "beefless ground": 0, "tofu": 0, "jackfruit": 0, "bacon": 0, "edamame": 0},
-                "units": "oz",
-            },
-            {
-                "header": "Starches",
-                "ingredients": {"mashed potatoes": 0, "cilantro-lime rice": 0, "turmeric rice": 4, "black rice": 0, "quinoa": 0, "beans": 0, "pasta": 0, "queso fresco": 0,},
-                "units": "cups",
-            },
-            {
-                "header": "Veggies",
-                "ingredients": {"mushrooms": 0, "carrots": 0, "normady": 0, "asparagus": 0, "green onions": 0, "red cabbage": 0, "broccoli": 0, "green beans": 0, "escabeche onions": 0, "cauliflower": 0, "roasted pineapple": 0, "pico de gallo": 0,},
-                "units": "cups",
-            },
-            {
-                "header": "Sauces",
-                "ingredients": {"fresh salsa": 0, "salsa verde cashews": 0, "thai peanut": 0, "mole": 0, "herbed sauce": 0, "marinara": 0, "al pastor": 0, "chipotle ranch": 0,},
-                "units": "oz",
-            },
-        ]};
 
 
-        // display shopping list"
-        var shoppingListContainerNode = document.getElementById("shoppingListContainer");
-        // block content:
-        var content = "";
-
-        // parse json structure to obtain data:
-        for (i in shoppingListMain.items) {
-            // store values for headers:
-            var header = shoppingListMain.items[i].header;
-            // store unit (append after ingredient amount in appended):
-            var unit = shoppingListMain.items[i].units;
-            // append header to block content:
-            content += "<div class='block2'><h5>" + header + "</h5>";
-            // set up div / list for ingredient names:
-            content += "<div class='col3'><div class='row'><ul>";
-            // iterate through ingredients object to obtain ingredient name:
-            for (var ingredient in shoppingListMain.items[i].ingredients) {
-                // store ingredient name:
-                var ingredient;
-                // append ingredient (as list item):
-                content += "<li>" + ingredient + "</li>";
-            }
-            // end tags for ingredient name:
-            content += "</ul></div>";
-            // set up div / list for ingredient amounts:
-            content += "<div class='row'><ul>";
-            // iterate through ingredients object to obtain ingredient amount:
-            for (var ingredient in shoppingListMain.items[i].ingredients) {
-                // store ingredient name:
-                var ingredientAmt = shoppingListMain.items[i].ingredients[ingredient];
-                // append ingredient amount and unit (as list item):
-                content += "<li>" + ingredientAmt + " " + unit + "</li>"
-            }
-            // end tags for ingredient amount:
-            content += "</ul></div>";
-            // end tags for block content:
-            content += "</div></div>";
-            // append content to block:
-            shoppingListContainerNode.innerHTML = content;
-        }
-
-
-        // temp:
-        toggleMeals = false;
-        mealsBtnNode = document.getElementById('meals_btn');
-        mealsNode = document.getElementsByClassName('meals');
-        tempNode = document.getElementById('temp');
-        var i; // ask Van if this should be in if statement
-
-        function createList() {
-            tempNode.style.display = 'block';
-        }
-
-        function showmeals() {
-            
-            if (toggleMeals == false) {
-                // var i;
-                for (i = 0; i < mealsNode.length; i++) {
-                    mealsNode[i].style.display = 'block';
-                    mealsBtnNode.innerHTML = "hide meals";
-                    toggleMeals = true;
-                }
-            } else {
-                // var i;
-                for (i = 0; i < mealsNode.length; i++) {
-                    mealsNode[i].style.display = 'none';
-                    mealsBtnNode.innerHTML = "show meals";
-                    toggleMeals = false;
-                }
-            }
-        }
+        // // parse json structure to obtain data:
+        // for (i in shoppingListMain.items) {
+        //     // store values for headers:
+        //     var header = shoppingListMain.items[i].header;
+        //     // store unit (append after ingredient amount in appended):
+        //     var unit = shoppingListMain.items[i].units;
+        //     // append header to block content:
+        //     content += "<div class='block2'><h5>" + header + "</h5>";
+        //     // set up div / list for ingredient names:
+        //     content += "<div class='col3'><div class='row'><ul>";
+        //     // iterate through ingredients object to obtain ingredient name:
+        //     for (var ingredient in shoppingListMain.items[i].ingredients) {
+        //         // store ingredient name:
+        //         var ingredient;
+        //         // append ingredient (as list item):
+        //         content += "<li>" + ingredient + "</li>";
+        //     }
+        //     // end tags for ingredient name:
+        //     content += "</ul></div>";
+        //     // set up div / list for ingredient amounts:
+        //     content += "<div class='row'><ul>";
+        //     // iterate through ingredients object to obtain ingredient amount:
+        //     for (var ingredient in shoppingListMain.items[i].ingredients) {
+        //         // store ingredient amount:
+        //         var ingredientAmt = shoppingListMain.items[i].ingredients[ingredient];
+        //         // append ingredient amount and unit (as list item):
+        //         content += "<li>" + ingredientAmt + " " + unit + "</li>"
+        //     }
+        //     // end tags for ingredient amount:
+        //     content += "</ul></div>";
+        //     // end tags for block content:
+        //     content += "</div></div>";
+        //     // append content to block:
+        //     shoppingListContainerNode.innerHTML = content;
+        // }
 
     </script>
 
