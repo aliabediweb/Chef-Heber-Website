@@ -599,7 +599,6 @@
                         var ingredientMod = ingredientsAmountObject[ingredientValue].split(' ')[2];
                         ingredientAmount = parseFloat(ingredientAmount.toFixed(2));
                         ingredientAmount = ingredientAmount.toString();                        
-                        console.log(ingredientAmount.toString());
                         content += "<li>" + ingredientAmount + " " + ingredientUnit;
                         if (ingredientMod != undefined) {
                             content += " " + ingredientMod + "</li>";
@@ -629,13 +628,70 @@
                 shoppingListContainerNode.innerHTML = content;
                 input.style.display = "none";
                 info.style.display = "none";
+
+                // for (const meal in mealsObject.meals) {
+                //     var mealTotal = mealNamesTotals.mealTotals[meal];
+                //     var ingredientsNameArray = Object.keys(mealsObject.meals[meal].ingredients);
+                //     ingredientsNameArray.forEach(updateValue);
+                //     function updateValue(item, index, array) {
+                //         shoppingListMain.items.forEach(updateShoppingList);
+                //         function updateShoppingList(item, index) {
+                //             var shoppingListIngredientsObject = shoppingListMain.items[index].ingredients;
+                //             for (const ingredient in shoppingListIngredientsObject) {
+                //                 console.log(ingredient + ' - ' + array[index]);
+                //             }
+                //         }
+                //     }
+                // }
+
+                shoppingListMain.items.forEach(updateShoppingList);
+                function updateShoppingList(item, index) {
+                    var shoppingListIngredientsObject = shoppingListMain.items[index].ingredients;
+
+                    for (const shoppingListIngredient in shoppingListIngredientsObject) {
+                        console.log(shoppingListIngredient + ' - ' + shoppingListMain.items[index].ingredients[shoppingListIngredient] + ' - ' +shoppingListMain.items[index].header + '-------------------------------------------------------------------');
+
+                        for (const meal in mealsObject.meals) {
+                            var mealTotal = mealNamesTotals.mealTotals[meal];
+                            var ingredientsObject = mealsObject.meals[meal].ingredients;
+                            for (const ingredient in ingredientsObject) {
+                                var ingredientAmount = Number(ingredientsObject[ingredient].split(' ')[0] * mealTotal);
+                                var ingredientUnit = ingredientsObject[ingredient].split(' ')[1]
+                                var ingredientMod = ingredientsObject[ingredient].split(' ')[2];
+                                ingredientAmount = parseFloat(ingredientAmount.toFixed(2));
+
+                                console.log(ingredient + ' = ' + ingredientAmount + ' - ' + ingredientUnit)
+                                if (ingredient == shoppingListIngredient) {
+                                    console.log("--------------------------match" + ' - ' + ingredient + ' - ' + shoppingListMain.items[index].ingredients[ingredient] + ' - ' + ingredientAmount);
+                                    shoppingListMain.items[index].ingredients[ingredient] += ingredientAmount;
+                                } 
+                            }
+
+                            // function updateValue(item, index2, array) {
+                            //     var ingredient = array[index2];
+                            //     console.log(ingredient + ' - ' + index);
+                            //     if (ingredient in shoppingListMain.items[index].ingredients) {
+                            //         // shoppingListIngredient = shoppingListMain.items[index].ingredients[ingredient];
+                            //         // shoppingListIngredient
+                            //     }
+                            // }
+
+                            // var ingredientsAmountObject = mealsObject.meals[meal].ingredients;
+                            //         for (const ingredientValue in ingredientsAmountObject) {
+                            //             var ingredientAmount = Number(ingredientsAmountObject[ingredientValue].split(' ')[0] * mealTotal);
+                            //             var ingredientUnit = ingredientsAmountObject[ingredientValue].split(' ')[1]
+                            //             console.log(ingredientAmount + ' - ' + ingredientUnit);
+                            //         }
+
+                        }
+                    }
+                }
+
             };
             reader.readAsArrayBuffer(f);
         }
         
         input.addEventListener('change', handleFile, false);
-
-
 
 
         // // parse json structure to obtain data:
@@ -673,7 +729,6 @@
         //     // append content to block:
         //     shoppingListContainerNode.innerHTML = content;
         // }
-
     </script>
 
 </body>
